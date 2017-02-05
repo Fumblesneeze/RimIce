@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<digsand>Dig Ice</digsand>
+	<digsanddesc>Dig holes to make ice blocks</digsanddesc>
+	<mustbesand>Terrain must be ice</mustbesand>
+
+</LanguageData>

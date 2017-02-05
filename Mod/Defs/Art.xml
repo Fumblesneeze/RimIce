@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<!--  =========== Base Classes ============ --> 
+<!-- Artwork Base Class -->
+  <ThingDef Name="ArtworkBase" Abstract="True">
+    <category>Building</category>
+    <thingClass>Building_Art</thingClass>
+
+    <graphicData>	
+	  <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+        <edgeTop>Damage/Edge</edgeTop>
+        <edgeBot>Damage/Edge</edgeBot>
+        <edgeLeft>Damage/Edge</edgeLeft>
+        <edgeRight>Damage/Edge</edgeRight>
+      </damageData>
+    </graphicData>	
+		
+    <soundImpactDefault>BulletImpactMetal</soundImpactDefault>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <repairEffect>Repair</repairEffect>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <filthLeaving>BuildingRubble</filthLeaving>
+    <castEdgeShadows>true</castEdgeShadows>
+    <useHitPoints>true</useHitPoints>
+	<altitudeLayer>Building</altitudeLayer>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>	
+	<passability>PassThroughOnly</passability>
+    <pathCost>70</pathCost>	
+    <fillPercent>0.5</fillPercent>
+
+    <comps>
+      <li><compClass>CompQuality</compClass></li>
+    </comps>
+
+    <inspectorTabs><li>ITab_Art</li></inspectorTabs>
+    <recipeMaker>
+      <workSpeedStat>SculptingSpeed</workSpeedStat>
+      <workSkill>Artistic</workSkill>
+      <unfinishedThingDef>UnfinishedSculpture</unfinishedThingDef>
+      <effectWorking>Sculpt</effectWorking>
+      <soundWorking>Recipe_Sculpt</soundWorking>
+      <recipeUsers>
+        <li>TableSculpting</li>
+      </recipeUsers>
+    </recipeMaker>
+    <tradeTags><li>Exotic</li></tradeTags>		
+  </ThingDef>
+  
+ <!-- Artwork Sculpture Class -->   
+  <ThingDef Name="ArtworkSculpture" ParentName="ArtworkBase" Abstract="True"> 
+    <comps>
+      <li Class="CompProperties_Art">
+        <nameMaker>ArtName_Sculpture</nameMaker>
+        <descriptionMaker>ArtDescription_Sculpture</descriptionMaker>
+      </li>
+    </comps>
+  </ThingDef> 
+
+  
+<!--  =========== Actual Artwork Buildings ============ -->
+<!-- ========= Sculptures ========= -->
+<!-- Small Ice Sculpture --> 
+  <ThingDef ParentName="ArtworkSculpture">
+    <defName>IceSculptureSmall</defName>
+    <label>Small Ice Sculpture</label>
+    <description>A torso-sized piece of material sculpted into an artistic form.</description>
+    <graphicData>
+      <graphicClass>Graphic_Random</graphicClass>
+      <texPath>Things/Building/Art/SculptureSmall</texPath>
+      <color>(180,210,230)</color>	  
+    </graphicData>
+    <minifiedDef>MinifiedSculpture</minifiedDef>
+    <tickerType>Rare</tickerType>	
+    <fillPercent>0.35</fillPercent>
+    <statBases>
+      <MaxHitPoints>90</MaxHitPoints>
+      <Mass>20</Mass>
+      <Beauty>40</Beauty>
+      <WorkToMake>8000</WorkToMake>
+    </statBases>
+    <costList>
+	  <Resource_IceBlocks>50</Resource_IceBlocks>
+    </costList>	
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+	  <li><compClass>CompMelter</compClass></li>
+    </comps>	
+  </ThingDef>
+
+<!-- Large Ice Sculpture -->   
+  <ThingDef ParentName="ArtworkSculpture">
+    <defName>IceSculptureLarge</defName>
+    <label>Large Ice Sculpture</label>
+    <description>A person-sized piece of material sculpted into an artistic form.</description>
+    <graphicData>
+      <graphicClass>Graphic_Random</graphicClass>
+      <texPath>Things/Building/Art/SculptureLarge</texPath>
+      <drawSize>(3,3)</drawSize>
+      <color>(180,210,230)</color>	  
+    </graphicData>
+    <minifiedDef>MinifiedSculpture</minifiedDef>
+    <tickerType>Rare</tickerType>	
+    <fillPercent>0.5</fillPercent>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Mass>90</Mass>
+      <Beauty>80</Beauty>
+			<WorkToMake>10000</WorkToMake>
+	</statBases>
+    <costList>
+	  <Resource_IceBlocks>75</Resource_IceBlocks>
+    </costList>	
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+	  <li><compClass>CompMelter</compClass></li>
+    </comps>	
+  </ThingDef>
+
+<!-- Grand Ice Sculpture -->   
+  <ThingDef ParentName="ArtworkSculpture">
+    <defName>IceSculptureGrand</defName>
+    <label>Grand Ice Sculpture</label>
+    <description>A car-sized piece of material sculpted into an artistic form.</description>
+    <graphicData>
+      <graphicClass>Graphic_Random</graphicClass>
+      <texPath>Things/Building/Art/SculptureGrand</texPath>
+      <drawSize>(4,4)</drawSize>
+      <color>(180,210,230)</color>	  
+    </graphicData>
+    <minifiedDef>MinifiedSculpture</minifiedDef>
+    <tickerType>Rare</tickerType>	
+    <fillPercent>0.5</fillPercent>
+    <size>(2,2)</size>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <Beauty>170</Beauty>
+      <Mass>350</Mass>
+			<WorkToMake>15000</WorkToMake>
+    </statBases>
+    <costList>
+	  <Resource_IceBlocks>150</Resource_IceBlocks>
+    </costList>	
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+	  <li><compClass>CompMelter</compClass></li>
+    </comps>	
+  </ThingDef>
+</Defs>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+      <ThingDef Name="BuildingBase" Abstract="True">
+    <category>Building</category>
+    <thingClass>Building</thingClass>
+    <soundImpactDefault>BulletImpactMetal</soundImpactDefault>
+    <selectable>true</selectable>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <repairEffect>Repair</repairEffect>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <filthLeaving>BuildingRubble</filthLeaving>
+    <graphicData>	
+	  <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+        <edgeTop>Damage/Edge</edgeTop>
+        <edgeBot>Damage/Edge</edgeBot>
+        <edgeLeft>Damage/Edge</edgeLeft>
+        <edgeRight>Damage/Edge</edgeRight>
+      </damageData>
+    </graphicData>	  
+  </ThingDef>  
+    
+    <ThingDef Name="WallBase" ParentName="BuildingBase" Abstract="True">
+    <description>Base Class for Walls</description>
+    <graphicData>
+      <texPath>Things/Building/Linked/Wall</texPath>
+      <graphicClass>Graphic_Appearances</graphicClass>
+      <linkType>CornerFiller</linkType>
+      <linkFlags>
+        <li>Wall</li>
+        <li>Rock</li>
+      </linkFlags>
+    </graphicData>
+    <blueprintGraphicData>
+      <texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+    </blueprintGraphicData>
+    <uiIconPath>Things/Building/Linked/WallSmooth_MenuIcon</uiIconPath>
+    <statBases>
+      <MaxHitPoints>350</MaxHitPoints>
+      <WorkToBuild>150</WorkToBuild>
+      <Flammability>1.0</Flammability>
+    </statBases>
+
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <altitudeLayer>Building</altitudeLayer>
+    <castEdgeShadows>true</castEdgeShadows>
+    <coversFloor>true</coversFloor>
+    <placingDraggableDimensions>1</placingDraggableDimensions>
+    <rotatable>false</rotatable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+
+    <building>
+      <isInert>true</isInert>
+      <ignoreNeedsPower>true</ignoreNeedsPower>
+    </building>
+	
+    <damageMultipliers>
+      <li>
+        <damageDef>Bomb</damageDef>
+        <multiplier>2</multiplier>
+      </li>
+    </damageMultipliers>
+	
+    <designationCategory>Structure</designationCategory>	
+  </ThingDef>
+    
+    <ThingDef ParentName="WallBase">
+    <defName>Wall_Ice</defName>
+    <label>Ice Wall</label>
+    <description>(Will deteriorate in temps above freezing) A wall made ice blocks. Medieval era technology which requires lots of effort and few resources. It is composed primarily of compacted ice.</description>
+
+    <graphicData>
+      <texPath>Things/Building/Linked/IceWall/IceWall_Atlas</texPath>
+      <graphicClass>Graphic_Single</graphicClass>	
+      <color>(180,210,230)</color>
+    </graphicData>
+    <blueprintGraphicData>
+      <texPath>Things/Building/Linked/IceWall/IceWall_Blueprint_Atlas</texPath>
+    </blueprintGraphicData>
+    <uiIconPath>Things/Building/Linked/IceWall/IceWall_MenuIcon</uiIconPath>
+    <statBases>
+      <MaxHitPoints>600</MaxHitPoints>
+      <WorkToBuild>850</WorkToBuild>
+      <Flammability>0</Flammability>
+      <Beauty>2</Beauty>	  
+    </statBases>
+
+    <costList>
+	  <Resource_IceBlocks>5</Resource_IceBlocks>
+    </costList>		
+
+    <tickerType>Rare</tickerType>
+    <neverMultiSelect>false</neverMultiSelect>	
+    <passability>Impassable</passability>
+    <fillPercent>1</fillPercent>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <holdsRoof>true</holdsRoof>	
+    <blockLight>true</blockLight>
+    <blockWind>true</blockWind>
+	
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+	  <li><compClass>CompMelter</compClass></li>
+    </comps>
+	
+    <designationCategory>Structure</designationCategory>
+</ThingDef>
+
+</Defs>
