@@ -1,5 +1,0 @@
-F:\SteamLibrary\steamapps\common\RimWorld\Mods\Ice\Assemblies\Ice.dll
-F:\SteamLibrary\steamapps\common\RimWorld\Mods\Ice\Assemblies\Ice.pdb
-F:\SteamLibrary\steamapps\common\RimWorld\Mods\Ice\Source\Ice\obj\Debug\Ice.dll
-F:\SteamLibrary\steamapps\common\RimWorld\Mods\Ice\Source\Ice\obj\Debug\Ice.pdb
-F:\SteamLibrary\steamapps\common\RimWorld\Mods\Ice\Source\Ice\obj\Debug\Ice.csprojResolveAssemblyReference.cache

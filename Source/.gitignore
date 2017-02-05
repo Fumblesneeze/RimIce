@@ -278,3 +278,7 @@ __pycache__/
 # !tools/packages.config
 
 [Tt]emp*.*
+
+UnityEngine.dll
+HugsLib.dll
+Assembly-CSharp.dll
