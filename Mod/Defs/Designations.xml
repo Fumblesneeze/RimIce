@@ -3,7 +3,7 @@
 
   <DesignationDef>
     <defName>DoDigIce</defName>
-    <texturePath>Designations/Haul</texturePath>
+    <texturePath>Designations/Mine</texturePath>
     <targetType>Cell</targetType>
   </DesignationDef>
 

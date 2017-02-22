@@ -5,7 +5,7 @@
     <defName>DigIce</defName>
     <label>Dig ice blocks</label>
     <giverClass>Ice.WorkGiver_ConstructDigIce</giverClass>
-    <workType>Construction</workType>
+    <workType>Mining</workType>
     <priorityInType>6</priorityInType>
     <verb>dig ice</verb>
     <gerund>digging </gerund>

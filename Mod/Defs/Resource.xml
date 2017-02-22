@@ -24,6 +24,7 @@
     <graphicData>
       <texPath>Things/Item/Resource/Ice/IceBlocks</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>Transparent</shaderType>
     </graphicData>
     <soundInteract>Stone_Drop</soundInteract>
     <soundDrop>Stone_Drop</soundDrop>
