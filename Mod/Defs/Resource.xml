@@ -15,6 +15,7 @@
     <drawGUIOverlay>true</drawGUIOverlay>
     <rotatable>false</rotatable>
     <pathCost>15</pathCost>
+    <tradeTags><li>ResourcesRaw</li></tradeTags>	
   </ThingDef>
 
   <ThingDef ParentName="ResourceBase">
@@ -61,10 +62,6 @@
     </stuffProps>
       <tickerType>Rare</tickerType>		
     <comps>
-      <li Class="CompProperties_Rottable">
-        <daysToRotStart>0.8</daysToRotStart>
-        <rotDestroys>true</rotDestroys>
-      </li>
       <li>
         <compClass>CompMelter</compClass>
       </li>	  
