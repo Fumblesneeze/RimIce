@@ -14,4 +14,6 @@ todo:
 
 Needs HugsLib.
 
+Recommended: Refactored Work Priorities (set repair threshhold so colonists don't go crazy repairing 99% walls)
+
 Based on Medieval Times and MarsX mods.
