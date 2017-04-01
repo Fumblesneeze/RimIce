@@ -23,6 +23,11 @@ namespace Ice
 		public static TerrainDef IceShallow;
 	}
 
+	public class DynamicTerrainDefs
+	{
+		public static TerrainDef SaltWaterModerate;
+	}
+
 	public class IceMod : ModBase
 	{
 		private FieldInfo resolvedDesignatorsField;
@@ -33,9 +38,44 @@ namespace Ice
 		public override void Initialize()
 		{
 			InitReflectionFields();
-			
+
 			DetourProvider.CompatibleDetour(AccessTools.TypeByName("BeachMaker").GetMethod("BeachTerrainAt"),
 				typeof(BeachMakerPatch).GetMethod(nameof(BeachMakerPatch.BeachTerrainAt)));
+
+
+			if(LoadedModManager.RunningMods.Any(x => x.Name == "Better Terrain"))
+			{
+				Log.Message("Ice: inject compatibility for BetterTerrain");
+				var betterTerrain = AccessTools.TypeByName("BT_BeachMaker");
+				if (betterTerrain != null)
+				{
+					DetourProvider.CompatibleDetour(betterTerrain.GetMethod("BeachTerrainAt"),
+						typeof(BT_BeachMakerPatch).GetMethod(nameof(BT_BeachMakerPatch.BeachTerrainAt)));
+				}
+			}
+
+			if (LoadedModManager.RunningMods.Any(x => x.AllDefs.Any(y => y.defName == "WaterModerate")))
+			{
+				var def = DefDatabase<TerrainDef>.GetNamed("WaterModerate");
+
+				var saltWaterDef = new TerrainDef { defName = "SaltWaterModerate" };
+
+				AccessTools.GetFieldNames(def).Select(x => AccessTools.Field(def.GetType(), x)).Do(x => x.SetValue(saltWaterDef, x.GetValue(def)));
+
+				saltWaterDef.defName = "SaltWaterModerate";
+				saltWaterDef.label = "SaltWaterModerate.label".Translate();
+
+				DefDatabase<TerrainDef>.Add(saltWaterDef);
+				DynamicTerrainDefs.SaltWaterModerate = saltWaterDef;
+
+				Log.Message("Ice: inject compatibility for FertileFields");
+				var fertileFields = AccessTools.TypeByName("RFF_BeachMaker");
+				if (fertileFields != null)
+				{
+					DetourProvider.CompatibleDetour(fertileFields.GetMethod("BeachTerrainAt"),
+						typeof(RFF_BeachMakerPatch).GetMethod(nameof(RFF_BeachMakerPatch.BeachTerrainAt)));
+				}
+			}
 		}
 
 		public override void DefsLoaded()

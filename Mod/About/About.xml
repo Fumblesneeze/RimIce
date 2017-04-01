@@ -14,9 +14,9 @@ todo:
 * Price of ice depending on current temperature
 * Ice blocks cooling rooms
 
-Needs HugsLib. Uses Harmony.
+Needs HugsLib to be loaded before. Uses Harmony.
+Load after Better Terrain and Fertile Fields if they are present.
 
 Recommended: Refactored Work Priorities (set repair threshhold so colonists don't go crazy repairing 99% walls)
-
-Based on Medieval Times and MarsX mods.</description>
+</description>
 </ModMetaData>

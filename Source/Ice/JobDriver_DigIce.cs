@@ -27,7 +27,7 @@ namespace Ice
         {
             get
             {
-                return StatDefOf.ConstructionSpeed;
+                return StatDefOf.MiningSpeed;
             }
         }
 
@@ -38,7 +38,7 @@ namespace Ice
         protected override void DoEffect(IntVec3 c)
         {
                 var thing = ThingMaker.MakeThing(ThingDef.Named("Resource_IceBlocks"), null);
-                thing.stackCount = 1;
+                thing.stackCount = 2;
 
                 GenPlace.TryPlaceThing(thing, TargetLocA, Map, ThingPlaceMode.Near, null);
                 //Map.terrainGrid.SetTerrain(c, TerrainDef.Named("Ice");

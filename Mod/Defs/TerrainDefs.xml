@@ -26,7 +26,7 @@
     <label>shallow ice</label>
     <texturePath>Terrain/Surfaces/Ice</texturePath>
     <EdgeType>FadeRough</EdgeType>
-    <RenderPrecedence>494</RenderPrecedence>
+    <RenderPrecedence>351</RenderPrecedence>
     <PathCost>16</PathCost>
     <statBases>
       <Beauty>-1</Beauty>
