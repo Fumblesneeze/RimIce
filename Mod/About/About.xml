@@ -4,7 +4,19 @@
   <targetVersion>0.16.1393</targetVersion>
   <author>Fumblesneeze</author>
   <url>https://github.com/Fumblesneeze/RimIce</url>
-  <description>Dig for ice blocks, build ice walls and sculptures that melt in higher temperatures.
+  <description>Adds Ice to Rimworld.
+* Ice Blocks can only be dug from ice terrain
+* Build Ice Walls &amp; Ice Sculptures
+* Ice buildings deteriorate in temperatures above freezing
+* Lakes freeze in winter and during cold snaps
+todo:
+* Dynamically add ice to traders
+* Price of ice depending on current temperature
+* Ice blocks cooling rooms
 
-Lakes freeze in cold temperatures!</description>
+Needs HugsLib. Uses Harmony.
+
+Recommended: Refactored Work Priorities (set repair threshhold so colonists don't go crazy repairing 99% walls)
+
+Based on Medieval Times and MarsX mods.</description>
 </ModMetaData>
