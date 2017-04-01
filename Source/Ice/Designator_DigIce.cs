@@ -46,8 +46,11 @@ namespace Ice
             if (edifice != null && edifice.def.Fillage == FillCategory.Full && edifice.def.passability == Traversability.Impassable)
                 return false;
 
-            if (Map.terrainGrid.TerrainAt(c).defName != "Ice")
+			var terrain = Map.terrainGrid.TerrainAt(c);
+
+			if(terrain != IceTerrainDefs.Ice && terrain != IceTerrainDefs.IceShallow)
                 return Translator.Translate("mustbesand");
+
             return AcceptanceReport.WasAccepted;
         }
 

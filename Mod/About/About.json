@@ -1,0 +1,27 @@
+{
+  "id": "RimIce",
+  "name": "Ice",
+  "version": "0.1.0",
+  "targetGameVersion": "0.16.1393",
+  "authors": "Fumblesneeze",
+  "description": "Dig for ice blocks, build ice walls and sculptures that melt in higher temperatures.\r\n\r\nLakes freeze in cold temperatures!",
+  "shortDescription": "Make ice walls and sculptures, let lakes freeze in winter",
+  "preview": "https://raw.githubusercontent.com/Fumblesneeze/RimIce/master/Mod/About/Preview.png",
+  "homePage": "https://github.com/Fumblesneeze/RimIce",
+  "issues": "https://github.com/Fumblesneeze/RimIce/issues",
+  "category": "Content",
+  "source": {
+    "github": "https://github.com/Fumblesneeze/RimIce/releases/download/v0.1/RimIce.zip"
+  },
+  "relationships": {
+    "requires": [
+      "HugsLib"
+    ]
+  },
+  "languages": [
+    "English"
+  ],
+  "support": "https://www.patreon.com/schweigert",
+  "created": "2017-02-22T23:05:24+00:00",
+  "changeLog": "Freezing lakes, saltwater oceans."
+}

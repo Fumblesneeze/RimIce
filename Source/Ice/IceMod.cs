@@ -1,4 +1,7 @@
-﻿using HugsLib;
+﻿using Harmony;
+using HugsLib;
+using HugsLib.Source.Detour;
+using HugsLib.Utils;
 using RimWorld;
 using System;
 using System.Collections.Generic;
@@ -9,75 +12,81 @@ using Verse;
 
 namespace Ice
 {
-    public class IceMod : ModBase
-    {
-        private FieldInfo resolvedDesignatorsField;
+	[DefOf]
+	public class IceTerrainDefs
+	{
+		public static TerrainDef WaterShallow;
+		public static TerrainDef WaterDeep;
+		public static TerrainDef SaltWaterShallow;
+		public static TerrainDef SaltWaterDeep;
+		public static TerrainDef Ice;
+		public static TerrainDef IceShallow;
+	}
 
-        public override string ModIdentifier { get; } = "Ice";
+	public class IceMod : ModBase
+	{
+		private FieldInfo resolvedDesignatorsField;
+		private IceMapComponent iceComponent;
 
-        private bool Injected { get; set; }
+		public override string ModIdentifier { get; } = "Ice";
 
-        public override void Initialize()
-        {
-            InitReflectionFields();
-        }
+		public override void Initialize()
+		{
+			InitReflectionFields();
+			
+			DetourProvider.CompatibleDetour(AccessTools.TypeByName("BeachMaker").GetMethod("BeachTerrainAt"),
+				typeof(BeachMakerPatch).GetMethod(nameof(BeachMakerPatch.BeachTerrainAt)));
+		}
 
-        public override void DefsLoaded()
-        {
-        }
+		public override void DefsLoaded()
+		{
+		}
 
-        public override void MapLoaded(Map map)
-        {
-            //map.mapTemperature.MapTemperatureTick();
+		public override void MapLoaded(Map map)
+		{
+			InjectDesignators();
 
-            //foreach(var trader in DefDatabase<TraderKindDef>.AllDefs)
-            //{
-            //}
+			iceComponent = MapComponentUtility.GetMapComponent<IceMapComponent>(map);
+			if (iceComponent == null)
+				iceComponent = new IceMapComponent(map);
+		}
 
-            if(map.terrainGrid.topGrid.Any(x => x.defName == "Ice"))
-            {
-                InjectDesignators();
-            }
-            else
-            {
-                RemoveDesignators();
-            }
-        }
+		private void RemoveDesignators()
+		{
+			var orders = DefDatabase<DesignationCategoryDef>.GetNamed("Orders", true);
 
-        private void RemoveDesignators()
-        {
-            var orders = DefDatabase<DesignationCategoryDef>.GetNamed("Orders", true);
+			var resolvedDesignators = (List<Designator>)resolvedDesignatorsField.GetValue(orders);
 
-            var resolvedDesignators = (List<Designator>)resolvedDesignatorsField.GetValue(orders);
+			var index = resolvedDesignators.FindIndex(item => item is Designator_DigIce);
 
-            var index = resolvedDesignators.FindIndex(item => item is Designator_DigIce);
+			if (index >= 0)
+			{
+				resolvedDesignators.RemoveAt(index);
+			}
+		}
 
-            if(index >= 0)
-            {
-                resolvedDesignators.RemoveAt(index);
-            }
-        }
+		private void InitReflectionFields()
+		{
+			resolvedDesignatorsField = typeof(DesignationCategoryDef).GetField("resolvedDesignators", BindingFlags.NonPublic | BindingFlags.Instance);
+			if (resolvedDesignatorsField == null) Logger.Error("failed to reflect DesignationCategoryDef.resolvedDesignators");
 
-        private void InitReflectionFields()
-        {
-            resolvedDesignatorsField = typeof(DesignationCategoryDef).GetField("resolvedDesignators", BindingFlags.NonPublic | BindingFlags.Instance);
-            if (resolvedDesignatorsField == null) Logger.Error("failed to reflect DesignationCategoryDef.resolvedDesignators");
+		}
 
-        }
+		private void InjectDesignators()
+		{
+			var orders = DefDatabase<DesignationCategoryDef>.GetNamed("Orders", true);
 
-        private void InjectDesignators()
-        {
+			var resolvedDesignators = (List<Designator>)resolvedDesignatorsField.GetValue(orders);
 
-            var orders = DefDatabase<DesignationCategoryDef>.GetNamed("Orders", true);
+			if (resolvedDesignators.FindIndex(item => item is Designator_DigIce) >= 0)
+				return;
 
-            var resolvedDesignators = (List<Designator>)resolvedDesignatorsField.GetValue(orders);
-
-            var index = resolvedDesignators.FindIndex(item => item is Designator_PlantsHarvestWood);
+			var index = resolvedDesignators.FindIndex(item => item is Designator_PlantsHarvestWood);
 
 
-            var designator = new Designator_DigIce();
-            resolvedDesignators.Insert(index + 1, designator);
-            //designator.SetVisible(true);
-        }
-    }
+			var designator = new Designator_DigIce();
+			resolvedDesignators.Insert(index + 1, designator);
+			//designator.SetVisible(true);
+		}
+	}
 }

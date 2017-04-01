@@ -1,15 +1,15 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // Allgemeine Informationen über eine Assembly werden über die folgenden 
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die mit einer Assembly verknüpft sind.
-[assembly: AssemblyTitle("RimWorldExampleProjectDLL")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Ice")]
+[assembly: AssemblyDescription("Dig for ice blocks, build ice walls and sculptures that melt in higher temperatures.\r\n\r\nLakes freeze in cold temperatures!")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("RimWorldExampleProjectDLL")]
+[assembly: AssemblyProduct("Ice")]
 [assembly: AssemblyCopyright("Copyright ©  2014-2015 (mrofa, Haplo)")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -31,6 +31,6 @@ using System.Runtime.InteropServices;
 //
 // Sie können alle Werte angeben oder die standardmäßigen Build- und Revisionsnummern 
 // übernehmen, indem Sie "*" eingeben:
-// [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.15.1.0")]
-[assembly: AssemblyFileVersion("0.15.1.0")]
+// [assembly: AssemblyVersion("0.1.0.0")]
+[assembly: AssemblyVersion("0.1.0.0")]
+[assembly: AssemblyFileVersion("0.1.0.0")]
