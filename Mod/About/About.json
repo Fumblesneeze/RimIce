@@ -1,5 +1,5 @@
 {
-  "id": "RimIce",
+  "id": "Ice",
   "name": "Ice",
   "version": "0.1.2",
   "targetGameVersion": "0.16.1393",
@@ -11,21 +11,22 @@
   "issues": "https://github.com/Fumblesneeze/RimIce/issues",
   "category": "Content",
   "source": {
-    "github": "https://github.com/Fumblesneeze/RimIce/releases/download/v0.1.1/RimIce.zip"
+    "github": "https://github.com/Fumblesneeze/RimIce/releases/download/v0.1.2/RimIce.zip"
   },
   "relationships": {
     "requires": [
       "HugsLib"
     ],
     "conflicts": [
-      "FertileFields",
       "Bridges",
       "FishIndustry"
     ],
     "after": [
+      "FertileFields",
       "BetterTerrain"
     ],
     "compatible": [
+      "FertileFields",
       "BetterTerrain"
     ]
   },

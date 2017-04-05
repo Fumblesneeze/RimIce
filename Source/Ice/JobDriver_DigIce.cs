@@ -37,7 +37,7 @@ namespace Ice
 
         protected override void DoEffect(IntVec3 c)
         {
-                var thing = ThingMaker.MakeThing(ThingDef.Named("Resource_IceBlocks"), null);
+                var thing = ThingMaker.MakeThing(Things.Resource_IceBlocks, null);
                 thing.stackCount = 2;
 
                 GenPlace.TryPlaceThing(thing, TargetLocA, Map, ThingPlaceMode.Near, null);
