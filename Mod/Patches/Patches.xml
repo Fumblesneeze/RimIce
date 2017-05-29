@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+    <Operation Class="PatchOperationSequence">
+        <success>Always</success>
+        <operations>
+            <li Class="PatchOperationTest">
+                <xpath>/DefPackage-TraderKindDef/TraderKindDef[defName='Base_Neolithic_Standard']</xpath>
+            </li>
+            <li Class="PatchOperationAdd">
+                <xpath>/DefPackage-TraderKindDef/TraderKindDef[defName='Base_Neolithic_Standard']/stockGenerators</xpath>
+                <order>Append</order>
+                <value>
+                    <li Class="Ice.IceStockGenerator" />
+                </value>
+            </li>
+        </operations>
+    </Operation>
+    <Operation Class="PatchOperationSequence">
+        <success>Always</success>
+        <operations>
+            <li Class="PatchOperationTest">
+                <xpath>/DefPackage-TraderKindDef/TraderKindDef[defName='Caravan_Neolithic_BulkGoods']</xpath>
+            </li>
+            <li Class="PatchOperationAdd">
+                <xpath>/DefPackage-TraderKindDef/TraderKindDef[defName='Caravan_Neolithic_BulkGoods']/stockGenerators</xpath>
+                <order>Append</order>
+                <value>
+                    <li Class="Ice.IceStockGenerator" />
+                </value>
+            </li>
+        </operations>
+    </Operation>
+</Patch>

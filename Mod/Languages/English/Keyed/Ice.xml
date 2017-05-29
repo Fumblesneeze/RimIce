@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
-	<digsand>Dig Ice</digsand>
-	<digsanddesc>Dig holes to make ice blocks</digsanddesc>
-	<mustbesand>Terrain must be ice</mustbesand>
+	<Ice.Dig>Dig Ice</Ice.Dig>
+	<Ice.DigDesc>Dig holes to make ice blocks</Ice.DigDesc>
+	<Ice.MustBeIce>Terrain must be ice</Ice.MustBeIce>
 
 </LanguageData>

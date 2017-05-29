@@ -1,22 +1,20 @@
 {
   "id": "Ice",
   "name": "Ice",
-  "version": "0.1.2",
-  "targetGameVersion": "0.16.1393",
+  "version": "0.1.3",
+  "targetGameVersion": "0.17.0",
   "authors": "Fumblesneeze",
-  "description": "Adds Ice to Rimworld.\r\n* Ice Blocks can only be dug from ice terrain\r\n* Build Ice Walls & Ice Sculptures\r\n* Ice buildings deteriorate in temperatures above freezing\r\n* Lakes freeze in winter and during cold snaps\r\ntodo:\r\n* Dynamically add ice to traders\r\n* Price of ice depending on current temperature\r\n* Ice blocks cooling rooms\r\n\r\nNeeds HugsLib to be loaded before. Uses Harmony.\r\nLoad after Better Terrain and Fertile Fields if they are present.\r\n\r\nRecommended: Refactored Work Priorities (set repair threshhold so colonists don't go crazy repairing 99% walls)\r\n",
+  "description": "Adds Ice to Rimworld.\r\n* Ice Blocks can only be dug from ice terrain\r\n* Build Ice Walls & Ice Sculptures\r\n* Ice buildings deteriorate in temperatures above freezing\r\n* Lakes freeze in winter and during cold snaps\r\n* Dynamically add ice to traders\r\n* Price of ice depending on current temperature\r\ntodo:\r\n* Ice blocks cooling rooms\r\n\r\nNeeds HugsLib to be loaded before. Uses Harmony.\r\n\r\nRecommended: Refactored Work Priorities (set repair threshhold so colonists don't go crazy repairing 99% walls)\r\n",
   "shortDescription": "Make ice walls and sculptures, let lakes freeze in winter",
   "preview": "https://raw.githubusercontent.com/Fumblesneeze/RimIce/master/Mod/About/Preview.png",
   "homePage": "https://github.com/Fumblesneeze/RimIce",
   "issues": "https://github.com/Fumblesneeze/RimIce/issues",
   "category": "Content",
   "source": {
-    "github": "https://github.com/Fumblesneeze/RimIce/releases/download/v0.1.2/RimIce.zip"
+    "github": "https://github.com/Fumblesneeze/RimIce/releases/download/v0.1.2/Ice.zip"
   },
   "relationships": {
-    "requires": [
-      "HugsLib"
-    ],
+    "requires": "HugsLib",
     "conflicts": [
       "Bridges",
       "FishIndustry"
@@ -25,15 +23,14 @@
       "FertileFields",
       "BetterTerrain"
     ],
+    "recommends": "RefactoredWorkPriorities",
     "compatible": [
       "FertileFields",
       "BetterTerrain"
     ]
   },
-  "languages": [
-    "English"
-  ],
+  "languages": "English",
   "support": "https://www.patreon.com/schweigert",
   "created": "2017-02-22T23:05:24+00:00",
-  "changeLog": "Compatibility with Fertile Fields and Better Terrain"
+  "changeLog": "A17 update, dynamically add ice to traders, dynamic price depending on temperature"
 }

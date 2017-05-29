@@ -1,115 +1,49 @@
 ﻿using Harmony;
 using HugsLib;
-using HugsLib.Source.Detour;
 using HugsLib.Utils;
 using RimWorld;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 using Verse;
+using static Ice.Patches.CheckAndPatch;
 
 namespace Ice
 {
-	public class IceMod : ModBase
-	{
-		private FieldInfo resolvedDesignatorsField;
-		private IceMapComponent iceComponent;
+    public class IceMod : ModBase
+    {
+        private IceMapComponent iceComponent;
 
-		public override string ModIdentifier { get; } = "Ice";
+        public override string ModIdentifier { get; } = "Ice";
 
-		public override void Initialize()
-		{
-			InitReflectionFields();
-		}
-
-		public override void DefsLoaded()
+        public override void Initialize()
         {
-            DetourProvider.CompatibleDetour(AccessTools.TypeByName("BeachMaker").GetMethod("BeachTerrainAt"),
-                typeof(BeachMakerPatch).GetMethod(nameof(BeachMakerPatch.BeachTerrainAt)));
-
-
-            if (LoadedModManager.RunningMods.Any(x => x.Name == "Better Terrain"))
-            {
-                Log.Message("Ice: inject compatibility for BetterTerrain");
-                var betterTerrain = AccessTools.TypeByName("BT_BeachMaker");
-                if (betterTerrain != null)
-                {
-                    DetourProvider.CompatibleDetour(betterTerrain.GetMethod("BeachTerrainAt"),
-                        typeof(BT_BeachMakerPatch).GetMethod(nameof(BT_BeachMakerPatch.BeachTerrainAt)));
-                }
-            }
-
-            if (LoadedModManager.RunningMods.Any(x => x.AllDefs.Any(y => y.defName == "WaterModerate")))
-            {
-                var def = DefDatabase<TerrainDef>.GetNamed("WaterModerate");
-
-                var saltWaterDef = new TerrainDef();
-
-                AccessTools.GetFieldNames(def).Select(x => AccessTools.Field(def.GetType(), x)).Do(x => x.SetValue(saltWaterDef, x.GetValue(def)));
-
-                saltWaterDef.defName = "SaltWaterModerate";
-                saltWaterDef.label = "SaltWaterModerate.label".Translate();
-
-                DefDatabase<TerrainDef>.Add(saltWaterDef);
-                DynamicTerrainDefs.SaltWaterModerate = saltWaterDef;
-
-                Log.Message("Ice: inject compatibility for FertileFields");
-                var fertileFields = AccessTools.TypeByName("RFF_BeachMaker");
-                if (fertileFields != null)
-                {
-                    DetourProvider.CompatibleDetour(fertileFields.GetMethod("BeachTerrainAt"),
-                        typeof(RFF_BeachMakerPatch).GetMethod(nameof(RFF_BeachMakerPatch.BeachTerrainAt)));
-                }
-            }
         }
 
-		public override void MapLoaded(Map map)
-		{
-			InjectDesignators();
+        public override void DefsLoaded()
+        {
+            InjectDetours();
+        }
 
-			iceComponent = MapComponentUtility.GetMapComponent<IceMapComponent>(map);
-			if (iceComponent == null)
-				iceComponent = new IceMapComponent(map);
-		}
+        public override void MapLoaded(Map map)
+        {
+            InjectDesignators();
 
-		private void RemoveDesignators()
-		{
-			var orders = DefDatabase<DesignationCategoryDef>.GetNamed("Orders", true);
+            iceComponent = HugsLib.Utils.MapComponentUtility.GetMapComponent<IceMapComponent>(map);
+            if (iceComponent == null)
+                iceComponent = new IceMapComponent(map);
+        }
 
-			var resolvedDesignators = (List<Designator>)resolvedDesignatorsField.GetValue(orders);
+        private void InjectDesignators()
+        {
+            var orders = Traverse.Create(DesignationCategories.Orders).Field("resolvedDesignators").GetValue<List<Designator>>();
 
-			var index = resolvedDesignators.FindIndex(item => item is Designator_DigIce);
+            if (orders.Any(item => item is Designator_DigIce))
+                return;
 
-			if (index >= 0)
-			{
-				resolvedDesignators.RemoveAt(index);
-			}
-		}
+            var index = orders.FindIndex(item => item is Designator_PlantsHarvestWood);
 
-		private void InitReflectionFields()
-		{
-			resolvedDesignatorsField = typeof(DesignationCategoryDef).GetField("resolvedDesignators", BindingFlags.NonPublic | BindingFlags.Instance);
-			if (resolvedDesignatorsField == null) Logger.Error("failed to reflect DesignationCategoryDef.resolvedDesignators");
-
-		}
-
-		private void InjectDesignators()
-		{
-			var orders = DefDatabase<DesignationCategoryDef>.GetNamed("Orders", true);
-
-			var resolvedDesignators = (List<Designator>)resolvedDesignatorsField.GetValue(orders);
-
-			if (resolvedDesignators.FindIndex(item => item is Designator_DigIce) >= 0)
-				return;
-
-			var index = resolvedDesignators.FindIndex(item => item is Designator_PlantsHarvestWood);
-
-
-			var designator = new Designator_DigIce();
-			resolvedDesignators.Insert(index + 1, designator);
-			//designator.SetVisible(true);
-		}
-	}
+            var designator = new Designator_DigIce();
+            orders.Insert(index + 1, designator);
+        }
+    }
 }

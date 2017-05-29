@@ -1,32 +1,38 @@
 ﻿using RimWorld;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Verse;
 
 namespace Ice
 {
     [DefOf]
-    public class IceTerrainDefs
+    public class IceTerrain
     {
         public static TerrainDef WaterShallow;
         public static TerrainDef WaterDeep;
-        public static TerrainDef SaltWaterShallow;
-        public static TerrainDef SaltWaterDeep;
         public static TerrainDef Ice;
         public static TerrainDef IceShallow;
     }
 
-    [DefOf]
     public class Traders
     {
         public static TraderKindDef BulkGoods;
     }
 
-    public class DynamicTerrainDefs
+    [DefOf]
+    public class Designations
     {
-        public static TerrainDef SaltWaterModerate;
+        public static DesignationDef DoDigIce;
+    }
+
+    [DefOf]
+    public class Jobs
+    {
+        public static JobDef DigIce;
+    }
+
+    [DefOf]
+    public class DesignationCategories
+    {
+        public static DesignationCategoryDef Orders;
     }
 
     [DefOf]

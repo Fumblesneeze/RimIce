@@ -6,27 +6,17 @@ namespace Ice
 {
     public class Designator_DigIce : Designator
     {
-        public override int DraggableDimensions
-        {
-            get
-            {
-                return 2;
-            }
-        }
+        public override int DraggableDimensions => 2;
 
-        public override bool DragDrawMeasurements
-        {
-            get
-            {
-                return true;
-            }
-        }
+        public override bool DragDrawMeasurements => true;
 
-        public Designator_DigIce() : base()
+        public static DesignationDef Designation => Designations.DoDigIce;
+
+        public Designator_DigIce()
         {
-            defaultLabel = Translator.Translate("digsand");
-            defaultDesc = Translator.Translate("digsanddesc");
-            icon = ContentFinder<Texture2D>.Get("UI/shovel", true);
+            defaultLabel = "Ice.Dig".Translate();
+            defaultDesc = "Ice.DigDesc".Translate();
+            icon = ContentFinder<Texture2D>.Get("UI/icesaw", true);
             useMouseIcon = true;
             soundDragSustain = SoundDefOf.DesignateDragStandard;
             soundDragChanged = SoundDefOf.DesignateDragStandardChanged;
@@ -36,7 +26,7 @@ namespace Ice
 
         public override AcceptanceReport CanDesignateCell(IntVec3 c)
         {
-            if (!GenGrid.InBounds(c, Map) || GridsUtility.Fogged(c, Map) || Map.designationManager.DesignationAt(c, DefDatabase<DesignationDef>.GetNamed("DoDigIce", true)) != null)
+            if (!GenGrid.InBounds(c, Map) || GridsUtility.Fogged(c, Map) || Map.designationManager.DesignationAt(c, Designation) != null)
                 return false;
 
             if (GenGrid.InNoBuildEdgeArea(c, Map))
@@ -46,17 +36,17 @@ namespace Ice
             if (edifice != null && edifice.def.Fillage == FillCategory.Full && edifice.def.passability == Traversability.Impassable)
                 return false;
 
-			var terrain = Map.terrainGrid.TerrainAt(c);
+            var terrain = Map.terrainGrid.TerrainAt(c);
 
-			if(terrain != IceTerrainDefs.Ice && terrain != IceTerrainDefs.IceShallow)
-                return Translator.Translate("mustbesand");
+            if (terrain != IceTerrain.Ice && terrain != IceTerrain.IceShallow)
+                return "Ice.MustBeIce".Translate();
 
             return AcceptanceReport.WasAccepted;
         }
 
         public override void DesignateSingleCell(IntVec3 c)
         {
-            Map.designationManager.AddDesignation(new Designation(c, DefDatabase<DesignationDef>.GetNamed("DoDigIce", true)));
+            Map.designationManager.AddDesignation(new Designation(c, Designation));
         }
 
         public override void SelectedUpdate()

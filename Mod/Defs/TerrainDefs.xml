@@ -37,36 +37,5 @@
     <changeable>false</changeable>
 	<holdSnow>true</holdSnow>
   </TerrainDef>
-
-  
-  <TerrainDef>
-    <defName>SaltWaterDeep</defName>
-    <label>deep salt water</label>
-    <texturePath>Terrain/Surfaces/WaterDeep</texturePath>
-    <EdgeType>FadeRough</EdgeType>
-    <RenderPrecedence>395</RenderPrecedence>
-		<passability>Impassable</passability>
-    <PathCost>300</PathCost>
-    <acceptFilth>false</acceptFilth>
-    <fertility>0</fertility>
-    <avoidWander>true</avoidWander>
-    <changeable>false</changeable>
-		<holdSnow>false</holdSnow>
-  </TerrainDef>
-
-  <TerrainDef>
-    <defName>SaltWaterShallow</defName>
-    <label>shallow salt water</label>
-    <texturePath>Terrain/Surfaces/WaterShallow</texturePath>
-    <EdgeType>FadeRough</EdgeType>
-    <RenderPrecedence>394</RenderPrecedence>
-    <PathCost>12</PathCost>
-    <acceptFilth>false</acceptFilth>
-    <fertility>0</fertility>
-    <avoidWander>true</avoidWander>
-    <changeable>false</changeable>
-		<holdSnow>false</holdSnow>
-    <driesTo>Gravel</driesTo>
-  </TerrainDef>
   
 </TerrainDefs>
