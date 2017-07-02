@@ -1,7 +1,5 @@
 ### Rim Ice ###
 
-![Ice Preview](https://media.giphy.com/media/xUOrw1Wz0TvNlP3nTq/giphy.gif)
-
 Adds Ice to Rimworld.
 
 * Ice Blocks can only be dug from ice terrain
@@ -12,6 +10,8 @@ Adds Ice to Rimworld.
 * Ice buildings deteriorate in temperatures above freezing
 * Dynamically add ice to traders
 * Price of ice depending on current temperature
+* Lakes freeze when it is cold:
+[Preview](https://media.giphy.com/media/xUOrw1Wz0TvNlP3nTq/giphy.gif)
 
 
 
