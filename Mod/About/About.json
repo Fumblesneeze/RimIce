@@ -11,7 +11,7 @@
   "issues": "https://github.com/Fumblesneeze/RimIce/issues",
   "category": "Content",
   "source": {
-    "github": "https://github.com/Fumblesneeze/RimIce/releases/download/v0.1.3/Ice.zip"
+    "github": "https://github.com/Fumblesneeze/RimIce/releases/download/v0.1.4/Ice.zip"
   },
   "relationships": {
     "requires": "HugsLib"
