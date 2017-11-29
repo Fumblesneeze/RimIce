@@ -1,4 +1,3 @@
-
 ### Rim Ice ###
 
 Adds Ice to Rimworld.
@@ -13,6 +12,8 @@ Adds Ice to Rimworld.
 * Ice blocks cooling rooms via special walls
 * Ice stuff will only get repaired when under 90% health unless directly commanded
 
+**Images**
+
 [WATCH A LAKE FREEZE](https://media.giphy.com/media/xUOrw1Wz0TvNlP3nTq/giphy.gif)
 
 Make ice blocks, build walls
@@ -22,6 +23,8 @@ Make ice blocks, build walls
 Build freezers
 
 ![Pic](https://github.com/Fumblesneeze/RimIce/blob/master/Mod/About/freezer.png?raw=true)
+
+------
 
 Needs HugsLib to be loaded before. Uses Harmony.
 
