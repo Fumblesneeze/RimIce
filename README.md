@@ -1,3 +1,4 @@
+
 ### Rim Ice ###
 
 Adds Ice to Rimworld.
@@ -15,9 +16,11 @@ Adds Ice to Rimworld.
 [WATCH A LAKE FREEZE](https://media.giphy.com/media/xUOrw1Wz0TvNlP3nTq/giphy.gif)
 
 Make ice blocks, build walls
+
 ![Pic](https://github.com/Fumblesneeze/RimIce/blob/master/Mod/About/Preview.png?raw=true)
 
 Build freezers
+
 ![Pic](https://github.com/Fumblesneeze/RimIce/blob/master/Mod/About/freezer.png?raw=true)
 
 Needs HugsLib to be loaded before. Uses Harmony.
