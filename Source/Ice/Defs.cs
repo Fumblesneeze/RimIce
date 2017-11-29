@@ -19,6 +19,7 @@ namespace Ice
         public static ThingDef Wall_Ice;
         public static ThingDef IceSculptureSmall;
         public static ThingDef IceSculptureLarge;
+        public static ThingDef IceSculptureGrand;
     }
 
     [DefOf]

@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die mit einer Assembly verknüpft sind.
 [assembly: AssemblyTitle("Ice")]
-[assembly: AssemblyDescription("Adds Ice to Rimworld.\r\n* Ice Blocks can only be dug from ice terrain\r\n* Build Ice Walls & Ice Sculptures\r\n* Ice buildings deteriorate in temperatures above freezing\r\n* Lakes freeze in winter and during cold snaps\r\n* Dynamically add ice to traders\r\n* Price of ice depending on current temperature\r\n* Ice blocks cooling rooms via special walls\r\n\r\nNeeds HugsLib to be loaded before. Uses Harmony.\r\n\r\nRecommended: Refactored Work Priorities (set repair threshhold so colonists don't go crazy repairing 99% walls)\r\n")]
+[assembly: AssemblyDescription("Adds Ice to Rimworld.\r\n\r\n* Build ice walls and sculptures\r\n* Ice blocks can be dug from ice terrain\r\n* Some traders have ice blocks, depending on the temperature\r\n* Ice buildings deteriorate in temperatures above freezing\r\n* Lakes freeze in winter and during cold snaps\r\n* Ice blocks cooling rooms via special walls\r\n* Ice stuff will only get repaired when under 90% health unless directly commanded\r\n\r\nNeeds HugsLib to be loaded before. Uses Harmony.\r\n\r\nPreview image made by [Queendubstep](http://steamcommunity.com/profiles/76561198284547921/)\r\n")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Ice")]
@@ -30,6 +30,6 @@ using System.Runtime.InteropServices;
 //
 // Sie können alle Werte angeben oder die standardmäßigen Build- und Revisionsnummern
 // übernehmen, indem Sie "*" eingeben:
-// [assembly: AssemblyVersion("0.1.3.0")]
-[assembly: AssemblyVersion("0.1.3.0")]
-[assembly: AssemblyFileVersion("0.1.3.0")]
+// [assembly: AssemblyVersion("0.1.4.0")]
+[assembly: AssemblyVersion("0.1.4.0")]
+[assembly: AssemblyFileVersion("0.1.4.0")]
