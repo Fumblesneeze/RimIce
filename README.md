@@ -18,7 +18,7 @@ Adds Ice to Rimworld.
 
 Make ice blocks, build walls
 
-![Pic](https://github.com/Fumblesneeze/RimIce/blob/master/Mod/About/wall.png?raw=true)
+![Pic](https://github.com/Fumblesneeze/RimIce/blob/master/Mod/About/walls.png?raw=true)
 
 Build freezers
 
