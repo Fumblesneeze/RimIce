@@ -12,9 +12,13 @@ namespace Ice
         public static TerrainDef IceShallow;
     }
 
-    public class Traders
+    [DefOf]
+    public class Buildings
     {
-        public static TraderKindDef BulkGoods;
+        public static ThingDef Cooler_Wall_Ice;
+        public static ThingDef Wall_Ice;
+        public static ThingDef IceSculptureSmall;
+        public static ThingDef IceSculptureLarge;
     }
 
     [DefOf]

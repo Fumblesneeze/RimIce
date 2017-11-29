@@ -51,7 +51,7 @@ namespace Ice
                 }
                 else if (type == IceTerrain.IceShallow)
                 {
-                    WarumupTile(i, temp);
+                    WarmupTile(i, temp);
                 }
             }
             currentIndex += indexesPerTick;
@@ -64,7 +64,7 @@ namespace Ice
             return type == IceTerrain.WaterDeep || type == IceTerrain.WaterShallow || (type.defName.Contains("Water") && !type.defName.Contains("Salt") && !type.defName.Contains("Moving") && !type.defName.Contains("Ocean"));
         }
 
-        private void WarumupTile(int mapIndex, float temp)
+        private void WarmupTile(int mapIndex, float temp)
         {
             if (!IceDepth.ContainsKey(mapIndex))
             {

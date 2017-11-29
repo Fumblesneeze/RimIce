@@ -1,9 +1,6 @@
 ﻿using Harmony;
 using RimWorld;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Verse;
 
 namespace Ice.Patches
@@ -12,7 +9,6 @@ namespace Ice.Patches
     [HarmonyPatch(nameof(Tradeable.PriceTypeFor))]
     public class DynamicPrice
     {
-
         public static void Postfix(Tradeable __instance, ref PriceType __result, TradeAction action)
         {
             if (__instance.ThingDef == Things.Resource_IceBlocks)
@@ -51,12 +47,7 @@ namespace Ice.Patches
                         __result = (PriceType)(byte)Math.Round(Math.Exp(tileTemp / 20) / 2); // for celsius degrees
                     }
                 }
-
-
             }
-
         }
-
-
     }
 }

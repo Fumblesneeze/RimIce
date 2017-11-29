@@ -1,9 +1,7 @@
 ﻿using Harmony;
 using HugsLib;
-using HugsLib.Utils;
 using RimWorld;
 using System.Collections.Generic;
-using System.Reflection;
 using Verse;
 using static Ice.Patches.CheckAndPatch;
 
@@ -21,19 +19,23 @@ namespace Ice
 
         public override void DefsLoaded()
         {
-            InjectDetours();
+            PatchMethods();
         }
 
         public override void MapLoaded(Map map)
         {
-            InjectDesignators();
+            AddDesignators();
+            AddMapComponents(map);
+        }
 
+        private void AddMapComponents(Map map)
+        {
             iceComponent = HugsLib.Utils.MapComponentUtility.GetMapComponent<IceMapComponent>(map);
             if (iceComponent == null)
                 iceComponent = new IceMapComponent(map);
         }
 
-        private void InjectDesignators()
+        private void AddDesignators()
         {
             var orders = Traverse.Create(DesignationCategories.Orders).Field("resolvedDesignators").GetValue<List<Designator>>();
 

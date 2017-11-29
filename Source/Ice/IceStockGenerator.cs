@@ -1,7 +1,6 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
 using Verse;
-using System;
 
 namespace Ice
 {
@@ -28,7 +27,7 @@ namespace Ice
 
             foreach (var thing in StockGeneratorUtility.TryMakeForStock(Things.Resource_IceBlocks, RandomCountOf(Things.Resource_IceBlocks)))
             {
-                if(!isColony)
+                if (!isColony)
                     yield return thing;
             }
         }

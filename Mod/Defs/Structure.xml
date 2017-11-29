@@ -56,7 +56,6 @@
 
     <building>
       <isInert>true</isInert>
-      <ignoreNeedsPower>true</ignoreNeedsPower>
     </building>
 	
     <damageMultipliers>
@@ -110,6 +109,59 @@
     </comps>
 	
     <designationCategory>Structure</designationCategory>
+</ThingDef>
+
+    <ThingDef ParentName="WallBase">
+    <defName>Cooler_Wall_Ice</defName>
+    <label>Cooling Blocks</label>
+    <description>This is an ice wall that will cool it's surroundings but needs to be refueled.</description>
+
+    <graphicData>
+      <texPath>Things/Building/Linked/IceWall/IceWall_Atlas</texPath>
+      <graphicClass>Graphic_Single</graphicClass>	
+      <shaderType>Transparent</shaderType>
+      <color>(180,210,230)</color>
+    </graphicData>
+    <blueprintGraphicData>
+      <texPath>Things/Building/Linked/IceWall/IceWall_Blueprint_Atlas</texPath>
+    </blueprintGraphicData>
+    <uiIconPath>Things/Building/Linked/IceWall/IceWall_MenuIcon</uiIconPath>
+    <statBases>
+      <MaxHitPoints>90</MaxHitPoints>
+      <WorkToBuild>350</WorkToBuild>
+      <Flammability>0</Flammability>
+      <Beauty>2</Beauty>	  
+    </statBases>
+
+    <costList>
+	  <Resource_IceBlocks>5</Resource_IceBlocks>
+    </costList>		
+
+    <tickerType>Normal</tickerType>
+    <neverMultiSelect>false</neverMultiSelect>	
+    <passability>Impassable</passability>
+    <fillPercent>1</fillPercent>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <holdsRoof>true</holdsRoof>	
+    <blockLight>true</blockLight>
+    <blockWind>true</blockWind>
+	
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+	  <li><compClass>CompMelter</compClass></li>
+      <li Class="CompProperties_Refuelable">  
+        <fuelConsumptionRate>5.0</fuelConsumptionRate>
+        <fuelCapacity>15.0</fuelCapacity>	
+        <fuelFilter><thingDefs><li>Resource_IceBlocks</li></thingDefs></fuelFilter>
+      </li>	
+      <li Class="CompProperties_HeatPusher">
+        <compClass>CompHeatPusherPowered</compClass>
+        <heatPerSecond>-13</heatPerSecond>
+        <heatPushMinTemperature>1</heatPushMinTemperature>	
+      </li>
+    </comps>
+	
+    <designationCategory>Temperature</designationCategory>
 </ThingDef>
 
 </Defs>
