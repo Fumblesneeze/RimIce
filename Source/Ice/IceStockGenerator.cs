@@ -21,8 +21,6 @@ namespace Ice
         {
             var tileTemp = Current.Game.World.tileTemperatures.GetOutdoorTemp(mapTileIndex);
 
-            var isBase = Current.Game.World.worldObjects.AnyFactionBaseAt(mapTileIndex);
-
             var isColony = Current.Game.World.worldObjects.AnySettlementAt(mapTileIndex);
 
             foreach (var thing in StockGeneratorUtility.TryMakeForStock(Things.Resource_IceBlocks, RandomCountOf(Things.Resource_IceBlocks)))

@@ -10,7 +10,7 @@ namespace Ice
 
         public override bool DragDrawMeasurements => true;
 
-        public static DesignationDef Designation => Designations.DoDigIce;
+        protected override DesignationDef Designation => Designations.DoDigIce;
 
         public Designator_DigIce()
         {
@@ -18,9 +18,9 @@ namespace Ice
             defaultDesc = "Ice.DigDesc".Translate();
             icon = ContentFinder<Texture2D>.Get("UI/icesaw", true);
             useMouseIcon = true;
-            soundDragSustain = SoundDefOf.DesignateDragStandard;
-            soundDragChanged = SoundDefOf.DesignateDragStandardChanged;
-            soundSucceeded = SoundDefOf.DesignateSmoothFloor;
+            soundDragSustain = SoundDefOf.Designate_DragStandard;
+            soundDragChanged = SoundDefOf.Designate_DragStandard_Changed;
+            soundSucceeded = SoundDefOf.Designate_SmoothSurface;
             hotKey = KeyBindingDefOf.Misc1;
         }
 

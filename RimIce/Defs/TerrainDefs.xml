@@ -16,7 +16,7 @@
       <li>Heavy</li>
       <li>Diggable</li>
     </affordances>
-    <terrainFilthDef>FilthDirt</terrainFilthDef>
+    <generatedFilth>Filth_Dirt</generatedFilth>
     <fertility>0.00</fertility>
     <takeFootprints>false</takeFootprints>
 	<holdSnow>true</holdSnow>
@@ -31,7 +31,7 @@
     <statBases>
       <Beauty>-1</Beauty>
     </statBases>
-    <terrainFilthDef>FilthDirt</terrainFilthDef>
+    <generatedFilth>Filth_Dirt</generatedFilth>
     <fertility>0</fertility>
     <avoidWander>false</avoidWander>
     <changeable>false</changeable>

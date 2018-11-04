@@ -1,6 +1,7 @@
 ﻿using Harmony;
 using RimWorld;
 using System;
+using System.Linq;
 using Verse;
 
 namespace Ice.Patches
@@ -17,9 +18,9 @@ namespace Ice.Patches
 
                 var tileTemp = Current.Game.World.tileTemperatures.GetOutdoorTemp(mapTileIndex);
 
-                var isBase = Current.Game.World.worldObjects.AnyFactionBaseAt(mapTileIndex);
+                var isBase = Current.Game.World.worldObjects.AnySettlementAt(mapTileIndex) && Current.Game.World.worldObjects.ObjectsAt(mapTileIndex).Any(x => !x.Faction.IsPlayer);
 
-                var isColony = Current.Game.World.worldObjects.AnySettlementAt(mapTileIndex);
+                var isColony = Current.Game.World.worldObjects.AnySettlementAt(mapTileIndex) && Current.Game.World.worldObjects.ObjectsAt(mapTileIndex).Any(x => x.Faction.IsPlayer);
 
                 if (action == TradeAction.PlayerBuys)
                 {

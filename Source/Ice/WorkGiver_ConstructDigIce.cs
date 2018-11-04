@@ -8,6 +8,6 @@ namespace Ice
     {
         protected override DesignationDef DesDef => Designations.DoDigIce;
 
-        public override Job JobOnCell(Pawn pawn, IntVec3 c) => new Job(Jobs.DigIce, c);
+        public override Job JobOnCell(Pawn pawn, IntVec3 cell, bool forced = false) => new Job(Jobs.DigIce, cell);
     }
 }

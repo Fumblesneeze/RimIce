@@ -14,7 +14,9 @@ Adds Ice to Rimworld.
 
 **Images**
 
-[WATCH A LAKE FREEZE](https://media.giphy.com/media/xUOrw1Wz0TvNlP3nTq/giphy.gif)
+Watch lakes freeze
+
+![Pic](https://i.giphy.com/media/xUOrw1Wz0TvNlP3nTq/giphy.gif)
 
 Make ice blocks, build walls
 

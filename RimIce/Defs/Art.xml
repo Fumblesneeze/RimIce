@@ -2,7 +2,7 @@
 <Defs>
 <!--  =========== Base Classes ============ --> 
 <!-- Artwork Base Class -->
-  <ThingDef Name="ArtworkBase" Abstract="True">
+  <ThingDef Name="IceArtworkBase" Abstract="True">
     <category>Building</category>
     <thingClass>Building_Art</thingClass>
 
@@ -18,13 +18,16 @@
         <edgeRight>Damage/Edge</edgeRight>
       </damageData>
     </graphicData>	
+    <thingCategories>
+      <li>BuildingsArt</li>
+    </thingCategories>
 		
-    <soundImpactDefault>BulletImpactMetal</soundImpactDefault>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
     <drawerType>MapMeshAndRealTime</drawerType>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
     <repairEffect>Repair</repairEffect>
     <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
-    <filthLeaving>BuildingRubble</filthLeaving>
+    <filthLeaving>Filth_RubbleBuilding</filthLeaving>
     <castEdgeShadows>true</castEdgeShadows>
     <useHitPoints>true</useHitPoints>
 	<altitudeLayer>Building</altitudeLayer>
@@ -53,11 +56,12 @@
   </ThingDef>
   
  <!-- Artwork Sculpture Class -->   
-  <ThingDef Name="ArtworkSculpture" ParentName="ArtworkBase" Abstract="True"> 
+  <ThingDef Name="IceArtworkSculpture" ParentName="IceArtworkBase" Abstract="True"> 
     <comps>
       <li Class="CompProperties_Art">
-        <nameMaker>ArtName_Sculpture</nameMaker>
+        <nameMaker>NamerArtSculpture</nameMaker>
         <descriptionMaker>ArtDescription_Sculpture</descriptionMaker>
+				<canBeEnjoyedAsArt>true</canBeEnjoyedAsArt>
       </li>
     </comps>
   </ThingDef> 
@@ -66,7 +70,7 @@
 <!--  =========== Actual Artwork Buildings ============ -->
 <!-- ========= Sculptures ========= -->
 <!-- Small Ice Sculpture --> 
-  <ThingDef ParentName="ArtworkSculpture">
+  <ThingDef ParentName="IceArtworkSculpture">
     <defName>IceSculptureSmall</defName>
     <label>Small Ice Sculpture</label>
     <description>A torso-sized piece of material sculpted into an artistic form.</description>
@@ -75,7 +79,7 @@
       <texPath>Things/Building/Art/SculptureSmall</texPath>
       <color>(180,210,230)</color>	  
     </graphicData>
-    <minifiedDef>MinifiedSculpture</minifiedDef>
+    <minifiedDef>MinifiedThing</minifiedDef>
     <tickerType>Rare</tickerType>	
     <fillPercent>0.35</fillPercent>
     <statBases>
@@ -94,7 +98,7 @@
   </ThingDef>
 
 <!-- Large Ice Sculpture -->   
-  <ThingDef ParentName="ArtworkSculpture">
+  <ThingDef ParentName="IceArtworkSculpture">
     <defName>IceSculptureLarge</defName>
     <label>Large Ice Sculpture</label>
     <description>A person-sized piece of material sculpted into an artistic form.</description>
@@ -104,7 +108,7 @@
       <drawSize>(3,3)</drawSize>
       <color>(180,210,230)</color>	  
     </graphicData>
-    <minifiedDef>MinifiedSculpture</minifiedDef>
+    <minifiedDef>MinifiedThing</minifiedDef>
     <tickerType>Rare</tickerType>	
     <fillPercent>0.5</fillPercent>
     <statBases>
@@ -123,7 +127,7 @@
   </ThingDef>
 
 <!-- Grand Ice Sculpture -->   
-  <ThingDef ParentName="ArtworkSculpture">
+  <ThingDef ParentName="IceArtworkSculpture">
     <defName>IceSculptureGrand</defName>
     <label>Grand Ice Sculpture</label>
     <description>A car-sized piece of material sculpted into an artistic form.</description>
@@ -133,7 +137,7 @@
       <drawSize>(4,4)</drawSize>
       <color>(180,210,230)</color>	  
     </graphicData>
-    <minifiedDef>MinifiedSculpture</minifiedDef>
+    <minifiedDef>MinifiedThing</minifiedDef>
     <tickerType>Rare</tickerType>	
     <fillPercent>0.5</fillPercent>
     <size>(2,2)</size>

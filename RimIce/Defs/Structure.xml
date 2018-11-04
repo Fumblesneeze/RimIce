@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-      <ThingDef Name="BuildingBase" Abstract="True">
+      <ThingDef Name="IceBuildingBase" Abstract="True">
     <category>Building</category>
     <thingClass>Building</thingClass>
-    <soundImpactDefault>BulletImpactMetal</soundImpactDefault>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
     <selectable>true</selectable>
     <drawerType>MapMeshAndRealTime</drawerType>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
     <repairEffect>Repair</repairEffect>
     <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
-    <filthLeaving>BuildingRubble</filthLeaving>
+    <filthLeaving>Filth_RubbleBuilding</filthLeaving>
     <graphicData>	
 	  <damageData>
         <cornerTL>Damage/Corner</cornerTL>
@@ -24,7 +24,7 @@
     </graphicData>	  
   </ThingDef>  
     
-    <ThingDef Name="WallBase" ParentName="BuildingBase" Abstract="True">
+    <ThingDef Name="IceWallBase" ParentName="IceBuildingBase" Abstract="True">
     <description>Base Class for Walls</description>
     <graphicData>
       <texPath>Things/Building/Linked/Wall</texPath>
@@ -35,9 +35,6 @@
         <li>Rock</li>
       </linkFlags>
     </graphicData>
-    <blueprintGraphicData>
-      <texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
-    </blueprintGraphicData>
     <uiIconPath>Things/Building/Linked/WallSmooth_MenuIcon</uiIconPath>
     <statBases>
       <MaxHitPoints>350</MaxHitPoints>
@@ -54,8 +51,13 @@
     <neverMultiSelect>true</neverMultiSelect>
     <staticSunShadowHeight>1.0</staticSunShadowHeight>
 
+
     <building>
       <isInert>true</isInert>
+      <ai_chillDestination>false</ai_chillDestination>
+      <blueprintGraphicData>
+        <texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
     </building>
 	
     <damageMultipliers>
@@ -68,21 +70,18 @@
     <designationCategory>Structure</designationCategory>	
   </ThingDef>
     
-    <ThingDef ParentName="WallBase">
+    <ThingDef ParentName="IceWallBase">
     <defName>Wall_Ice</defName>
-    <label>Ice Wall</label>
+    <label>Icy Wall</label>
     <description>(Will deteriorate in temps above freezing) A wall made ice blocks. Medieval era technology which requires lots of effort and few resources. It is composed primarily of compacted ice.</description>
 
     <graphicData>
-      <texPath>Things/Building/Linked/IceWall/IceWall_Atlas</texPath>
+      <texPath>Things/Building/Linked/RimIceWall/IceWall_Atlas</texPath>
       <graphicClass>Graphic_Single</graphicClass>	
       <shaderType>Transparent</shaderType>
       <color>(180,210,230)</color>
     </graphicData>
-    <blueprintGraphicData>
-      <texPath>Things/Building/Linked/IceWall/IceWall_Blueprint_Atlas</texPath>
-    </blueprintGraphicData>
-    <uiIconPath>Things/Building/Linked/IceWall/IceWall_MenuIcon</uiIconPath>
+    <uiIconPath>Things/Building/Linked/RimIceWall/IceWall_MenuIcon</uiIconPath>
     <statBases>
       <MaxHitPoints>90</MaxHitPoints>
       <WorkToBuild>350</WorkToBuild>
@@ -111,21 +110,18 @@
     <designationCategory>Structure</designationCategory>
 </ThingDef>
 
-    <ThingDef ParentName="WallBase">
+    <ThingDef ParentName="IceWallBase">
     <defName>Cooler_Wall_Ice</defName>
     <label>Cooling Blocks</label>
-    <description>This is an ice wall that will cool it's surroundings but needs to be refueled.</description>
+    <description>This is an ice wall that will cool its surroundings but needs to be refueled.</description>
 
     <graphicData>
-      <texPath>Things/Building/Linked/IceWall/IceWall_Atlas</texPath>
+      <texPath>Things/Building/Linked/RimIceWall/IceWall_Atlas</texPath>
       <graphicClass>Graphic_Single</graphicClass>	
       <shaderType>Transparent</shaderType>
       <color>(180,210,230)</color>
     </graphicData>
-    <blueprintGraphicData>
-      <texPath>Things/Building/Linked/IceWall/IceWall_Blueprint_Atlas</texPath>
-    </blueprintGraphicData>
-    <uiIconPath>Things/Building/Linked/IceWall/IceWall_MenuIcon</uiIconPath>
+    <uiIconPath>Things/Building/Linked/RimIceWall/IceWall_MenuIcon</uiIconPath>
     <statBases>
       <MaxHitPoints>90</MaxHitPoints>
       <WorkToBuild>350</WorkToBuild>
@@ -148,15 +144,16 @@
 	
     <comps>
       <li Class="CompProperties_Forbiddable"/>
-	  <li><compClass>CompMelter</compClass></li>
       <li Class="CompProperties_Refuelable">  
         <fuelConsumptionRate>5.0</fuelConsumptionRate>
+        <destroyOnNoFuel>true</destroyOnNoFuel>
         <fuelCapacity>15.0</fuelCapacity>	
+        <initialFuelPercent>1</initialFuelPercent>
         <fuelFilter><thingDefs><li>Resource_IceBlocks</li></thingDefs></fuelFilter>
       </li>	
       <li Class="CompProperties_HeatPusher">
         <compClass>CompHeatPusherPowered</compClass>
-        <heatPerSecond>-13</heatPerSecond>
+        <heatPerSecond>-10</heatPerSecond>
         <heatPushMinTemperature>1</heatPushMinTemperature>	
       </li>
     </comps>

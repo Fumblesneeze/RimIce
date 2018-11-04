@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <ThingDef Name="ResourceBase" Abstract="True">
+  <ThingDef Name="IceResourceBase" Abstract="True">
     <thingClass>ThingWithComps</thingClass>
     <category>Item</category>
     <resourceReadoutPriority>Middle</resourceReadoutPriority>
@@ -18,12 +18,12 @@
     <tradeTags><li>ResourcesRaw</li></tradeTags>	
   </ThingDef>
 
-  <ThingDef ParentName="ResourceBase">
+  <ThingDef ParentName="IceResourceBase">
     <defName>Resource_IceBlocks</defName>
-    <label>Ice Blocks</label>
+    <label>Ice</label>
     <description>Water which has been frozen to create blocks of ice. Will melt in temperatures above freezing.</description>
     <graphicData>
-      <texPath>Things/Item/Resource/Ice/IceBlocks</texPath>
+      <texPath>Things/Item/Resource/RimIce/IceBlocks</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>Transparent</shaderType>
     </graphicData>

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
   <name>Ice</name>
-  <targetVersion>0.18.1722</targetVersion>
+  <targetVersion>1.0.0</targetVersion>
   <author>Fumblesneeze</author>
   <url>https://github.com/Fumblesneeze/RimIce</url>
   <description>Adds Ice to Rimworld.
@@ -14,7 +14,7 @@
 * Ice blocks cooling rooms via special walls
 * Ice stuff will only get repaired when under 90% health unless directly commanded
 
-Needs HugsLib to be loaded before. Uses Harmony.
+Uses Harmony.
 
 Preview image made by [Queendubstep](http://steamcommunity.com/profiles/76561198284547921/)
 </description>
