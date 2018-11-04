@@ -2,7 +2,7 @@
 
 Adds Ice to Rimworld.
 
-![Ice Preview](https://github.com/Fumblesneeze/RimIce/blob/master/Mod/About/Preview.png?raw=true)
+![Ice Preview](https://github.com/Fumblesneeze/RimIce/blob/master/RimIce/About/Preview.png?raw=true)
 
 * Build ice walls and sculptures
 * Ice blocks can be dug from ice terrain
@@ -16,15 +16,15 @@ Adds Ice to Rimworld.
 
 Watch lakes freeze
 
-![Pic](https://i.giphy.com/media/xUOrw1Wz0TvNlP3nTq/giphy.gif)
+[Pic](https://i.giphy.com/media/xUOrw1Wz0TvNlP3nTq/giphy.gif)
 
 Make ice blocks, build walls
 
-![Pic](https://github.com/Fumblesneeze/RimIce/blob/master/Mod/About/walls.png?raw=true)
+![Pic](https://github.com/Fumblesneeze/RimIce/blob/master/RimIce/About/walls.png?raw=true)
 
 Build freezers
 
-![Pic](https://github.com/Fumblesneeze/RimIce/blob/master/Mod/About/freezer.png?raw=true)
+![Pic](https://github.com/Fumblesneeze/RimIce/blob/master/RimIce/About/freezer.png?raw=true)
 
 ------
 
