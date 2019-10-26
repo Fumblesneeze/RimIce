@@ -13,13 +13,13 @@
   "issues": "https://github.com/Fumblesneeze/RimIce/issues",
   "category": "Content",
   "source": {
-    "github": "https://github.com/Fumblesneeze/RimIce/releases/download/v0.1.4/Ice.zip"
+    "github": "https://github.com/Fumblesneeze/RimIce/releases/download/v0.1.5/Ice.zip"
   },
   "relationships": {
     "requires": "HugsLib"
   },
   "languages": "English",
   "support": "https://www.patreon.com/schweigert",
-  "created": "2019-10-26T20:54:32.9753165+02:00",
+  "created": "2019-10-26T21:02:23.6806936+02:00",
   "changeLog": "Fixed the affordance bug"
 }
