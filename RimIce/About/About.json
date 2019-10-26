@@ -1,8 +1,10 @@
 {
   "id": "Ice",
   "name": "Ice",
-  "version": "0.1.4",
-  "targetGameVersion": "0.18.1722",
+  "version": "0.1.5",
+  "supportedVersions": [
+    "1.0.0"
+  ],
   "authors": "Fumblesneeze",
   "description": "Adds Ice to Rimworld.\r\n\r\n* Build ice walls and sculptures\r\n* Ice blocks can be dug from ice terrain\r\n* Some traders have ice blocks, depending on the temperature\r\n* Ice buildings deteriorate in temperatures above freezing\r\n* Lakes freeze in winter and during cold snaps\r\n* Ice blocks cooling rooms via special walls\r\n* Ice stuff will only get repaired when under 90% health unless directly commanded\r\n\r\nNeeds HugsLib to be loaded before. Uses Harmony.\r\n\r\nPreview image made by [Queendubstep](http://steamcommunity.com/profiles/76561198284547921/)\r\n",
   "shortDescription": "Make ice walls and sculptures, let lakes freeze in winter",
@@ -18,6 +20,6 @@
   },
   "languages": "English",
   "support": "https://www.patreon.com/schweigert",
-  "created": "2017-02-22T23:05:24+00:00",
-  "changeLog": "Small patch + new preview"
+  "created": "2019-10-26T20:54:32.9753165+02:00",
+  "changeLog": "Fixed the affordance bug"
 }
