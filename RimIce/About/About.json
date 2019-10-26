@@ -13,13 +13,14 @@
   "issues": "https://github.com/Fumblesneeze/RimIce/issues",
   "category": "Content",
   "source": {
-    "github": "https://github.com/Fumblesneeze/RimIce/releases/download/v0.1.5/Ice.zip"
+    "github": "https://github.com/Fumblesneeze/RimIce/releases/download/v0.1.5/Ice.zip",
+    "steam": "1556240626"
   },
   "relationships": {
-    "requires": "HugsLib"
+    "after": "HugsLib"
   },
   "languages": "English",
   "support": "https://www.patreon.com/schweigert",
-  "created": "2019-10-26T21:02:23.6806936+02:00",
-  "changeLog": "Fixed the affordance bug"
+  "created": "2019-10-26T21:21:23.3924487+02:00",
+  "changeLog": "add Steam ID"
 }
