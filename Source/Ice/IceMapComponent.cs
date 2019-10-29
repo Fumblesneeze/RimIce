@@ -8,9 +8,13 @@ namespace Ice
 {
     public class IceMapComponent : MapComponent
     {
+        public static IceMapComponent Instance { get; private set; }
+
         public IceMapComponent(Map map) : base(map)
         {
             this.EnsureIsActive();
+            Instance = this;
+            IceTerrain.IceShallow.affordances.RemoveAll(a => a.defName == "Medium" || a.defName == "Heavy");
         }
 
         public float ShallowIceThreshold { get; } = -150;
@@ -74,20 +78,25 @@ namespace Ice
 
             if (IceDepth[mapIndex] > 0)
             {
-                var vec = map.cellIndices.IndexToCell(mapIndex);
-                if (!TemporarilyRemovedTerrain.ContainsKey(mapIndex))
-                {
-                    TemporarilyRemovedTerrain.Add(mapIndex, IceTerrain.WaterShallow);
-                }
-                var oldType = TemporarilyRemovedTerrain[mapIndex];
-                TemporarilyRemovedTerrain.Remove(mapIndex);
-
-                map.terrainGrid.SetTerrain(vec, oldType);
-                map.designationManager.allDesignations.Remove(
-                    map.designationManager.allDesignations.SingleOrDefault(x => x.target == vec && x.def == Designations.DoDigIce)
-                );
-                IceDepth.Remove(mapIndex);
+                RemoveIceFromTile(mapIndex);
             }
+        }
+
+        public void RemoveIceFromTile(int mapIndex)
+        {
+            var vec = map.cellIndices.IndexToCell(mapIndex);
+            if (!TemporarilyRemovedTerrain.ContainsKey(mapIndex))
+            {
+                TemporarilyRemovedTerrain.Add(mapIndex, IceTerrain.WaterShallow);
+            }
+            var oldType = TemporarilyRemovedTerrain[mapIndex];
+            TemporarilyRemovedTerrain.Remove(mapIndex);
+
+            map.terrainGrid.SetTerrain(vec, oldType);
+            map.designationManager.allDesignations.Remove(
+                map.designationManager.allDesignations.SingleOrDefault(x => x.target == vec && x.def == Designations.DoDigIce)
+            );
+            IceDepth.Remove(mapIndex);
         }
 
         private void CooldownTile(int mapIndex, float temp, TerrainDef type)
@@ -109,7 +118,9 @@ namespace Ice
 
                 IceDepth[mapIndex] = Math.Max(IceDepth[mapIndex], maximumIceDepth);
 
-                if (IceDepth[mapIndex] < ShallowIceThreshold)
+                var factor = type.defName.Contains("deep") || type.defName.Contains("Deep") ? 3.0 : 1.0;
+
+                if (IceDepth[mapIndex] < ShallowIceThreshold * factor)
                 {
                     if (!TemporarilyRemovedTerrain.ContainsKey(mapIndex))
                     {
