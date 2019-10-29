@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using System.Collections.Generic;
 using UnityEngine;
 using Verse;
 
@@ -52,6 +53,11 @@ namespace Ice
         public override void SelectedUpdate()
         {
             GenUI.RenderMouseoverBracket();
+        }
+
+        public override void RenderHighlight(List<IntVec3> dragCells)
+        {
+            DesignatorUtility.RenderHighlightOverSelectableCells(this, dragCells);
         }
     }
 }

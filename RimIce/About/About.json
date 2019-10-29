@@ -21,6 +21,6 @@
   },
   "languages": "English",
   "support": "https://www.patreon.com/schweigert",
-  "created": "2019-10-29T12:45:36.4081079+01:00",
-  "changeLog": "fixed ice affordance, respawn water on mined shallow ice, mining skill instead of construction skill"
+  "created": "2019-10-29T14:20:46.2508509+01:00",
+  "changeLog": "fixed the designator drag highlighting"
 }
