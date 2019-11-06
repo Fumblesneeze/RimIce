@@ -59,11 +59,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CompProperties_Refuelable_Temp.cs" />
+    <Compile Include="CompHitpointRefuelable.cs" />
     <Compile Include="Defs.cs" />
     <Compile Include="IceMapComponent.cs" />
     <Compile Include="IceMod.cs" />
     <Compile Include="IceStockGenerator.cs" />
+    <Compile Include="CompProperties_HitpointRefuelable.cs" />
     <Compile Include="Patches\CheckAndPatch.cs" />
     <Compile Include="Patches\DynamicPrice.cs" />
     <Compile Include="Patches\RepairIceWallsThreshold.cs" />

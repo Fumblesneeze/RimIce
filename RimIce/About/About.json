@@ -1,7 +1,7 @@
 {
   "id": "Ice",
   "name": "Ice",
-  "version": "0.1.6",
+  "version": "0.1.7-pre",
   "supportedVersions": [
     "1.0.0"
   ],
@@ -21,6 +21,7 @@
   },
   "languages": "English",
   "support": "https://www.patreon.com/schweigert",
-  "created": "2019-10-29T14:20:46.2508509+01:00",
-  "changeLog": "fixed the designator drag highlighting"
+  "created": "2019-11-06T13:24:31.4809321+01:00",
+  "changeLog": "combining the two wall types",
+  "preRelease": true
 }

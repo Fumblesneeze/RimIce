@@ -22,31 +22,42 @@ namespace Ice.Patches
 
                 var isColony = Current.Game.World.worldObjects.AnySettlementAt(mapTileIndex) && Current.Game.World.worldObjects.ObjectsAt(mapTileIndex).Any(x => x.Faction.IsPlayer);
 
-                if (action == TradeAction.PlayerBuys)
+                if (tileTemp > 50)
                 {
-                    if (isColony)
+                    if (action == TradeAction.PlayerBuys)
                     {
-                        // ice trader
+                        __result = PriceType.Exorbitant;
+                    }
+                    else
+                    {
                         __result = PriceType.Normal;
                     }
-                    else if (isBase)
+                }
+                else if (tileTemp > 30)
+                {
+                    if (action == TradeAction.PlayerBuys)
                     {
-                        // buy from faction base
-                        __result = (PriceType)(byte)Math.Round(Math.Exp(tileTemp / 20)); // for celsius degrees
+                        __result = PriceType.Expensive;
+                    }
+                    else
+                    {
+                        __result = PriceType.Cheap;
+                    }
+                }
+                else if (tileTemp > 10)
+                {
+                    if (action == TradeAction.PlayerBuys)
+                    {
+                        __result = PriceType.Normal;
+                    }
+                    else
+                    {
+                        __result = PriceType.VeryCheap;
                     }
                 }
                 else
                 {
-                    if (isColony)
-                    {
-                        // caravan buys at this cost
-                        __result = (PriceType)(byte)(tileTemp < 0 ? 1 : tileTemp < 20 ? 2 : tileTemp < 30 ? 3 : 4);
-                    }
-                    else if (isBase)
-                    {
-                        // sell to faction base
-                        __result = (PriceType)(byte)Math.Round(Math.Exp(tileTemp / 20) / 2); // for celsius degrees
-                    }
+                    __result = PriceType.Undefined;
                 }
             }
         }

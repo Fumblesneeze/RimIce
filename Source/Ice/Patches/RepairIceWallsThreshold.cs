@@ -15,8 +15,7 @@ namespace Ice.Patches
             if (__result == false)
                 return;
 
-            if (t.def == Buildings.Cooler_Wall_Ice ||
-                t.def == Buildings.Wall_Ice ||
+            if (t.def == Buildings.Wall_Ice ||
                 t.def == Buildings.IceSculptureSmall ||
                 t.def == Buildings.IceSculptureGrand ||
                 t.def == Buildings.IceSculptureLarge)
