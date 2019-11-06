@@ -68,6 +68,7 @@
     <Compile Include="Patches\CheckAndPatch.cs" />
     <Compile Include="Patches\DynamicPrice.cs" />
     <Compile Include="Patches\RepairIceWallsThreshold.cs" />
+    <Compile Include="Patches\PatchHasComp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Designator_DigIce.cs" />
     <Compile Include="JobDriver_DigIce.cs" />

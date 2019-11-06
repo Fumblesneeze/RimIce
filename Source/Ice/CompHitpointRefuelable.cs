@@ -16,7 +16,7 @@ namespace Ice
         private static PropertyInfo ShouldPushHeatNow { get; } = AccessTools.Property(typeof(CompHeatPusher), "ShouldPushHeatNow");
         private static FieldInfo fuel { get; } = AccessTools.Field(typeof(CompRefuelable), "fuel");
 
-        public CompHitpointRefuelable()
+        public CompHitpointRefuelable() : base()
         {
         }
 
@@ -76,9 +76,6 @@ namespace Ice
             if(heatPusher == null || (bool)ShouldPushHeatNow.GetValue(heatPusher, null))
                 base.CompTick();
 
-            var refuelable = parent.GetComp<CompRefuelable>() as CompRefuelable;
-
-            Log.Message($"refuelable is {refuelable} ({refuelable != null})");
 
             var shouldHaveHp = (int)Math.Ceiling((float)fuel.GetValue(this) / Props.fuelCapacity * max);
             if(shouldHaveHp < hp)

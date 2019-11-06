@@ -13,7 +13,7 @@
 * Some traders have ice blocks, depending on the temperature
 * Ice buildings deteriorate in temperatures above freezing
 * Lakes freeze in winter and during cold snaps
-* Ice blocks cooling rooms via special walls
+* Ice walls cooling rooms
 * Ice stuff will only get repaired when under 90% health unless directly commanded
 
 Needs HugsLib to be loaded before. Uses Harmony.
