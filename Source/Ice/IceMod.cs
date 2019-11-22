@@ -11,7 +11,7 @@ namespace Ice
     {
         private IceMapComponent iceComponent;
 
-        public override string ModIdentifier { get; } = "Ice";
+        public override string ModIdentifier { get; } = "RimIce";
 
         public override void Initialize()
         {

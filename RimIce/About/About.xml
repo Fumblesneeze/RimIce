@@ -9,12 +9,11 @@
   <description>Adds Ice to Rimworld.
 
 * Build ice walls and sculptures
-* Ice blocks can be dug from ice terrain
-* Some traders have ice blocks, depending on the temperature
-* Ice buildings deteriorate in temperatures above freezing
-* Lakes freeze in winter and during cold snaps
-* Ice walls cooling rooms
-* Ice stuff will only get repaired when under 90% health unless directly commanded
+* Ice blocks, walls and sculptures will cool the area but deteriorate
+* Repair ice things with more ice blocks
+* Ice blocks can be dug from ice terrain or bought from traders, price will vary depending on the temperature
+* Lakes and marshes freeze in winter and during cold snaps
+* You can build on the frozen lakes, but beware, things might get destroyed when they thaw
 
 Needs HugsLib to be loaded before. Uses Harmony.
 

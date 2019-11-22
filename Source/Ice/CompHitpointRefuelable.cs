@@ -35,7 +35,7 @@ namespace Ice
                 var max = parent.MaxHitPoints;
 
                 var shouldHaveHp = (int)Math.Ceiling((float)fuel.GetValue(this) / Props.fuelCapacity * max);
-                parent.HitPoints = shouldHaveHp;
+                SetHP(shouldHaveHp);
             }
         }
 
@@ -80,8 +80,13 @@ namespace Ice
             var shouldHaveHp = (int)Math.Ceiling((float)fuel.GetValue(this) / Props.fuelCapacity * max);
             if(shouldHaveHp < hp)
             {
-                parent.HitPoints = shouldHaveHp;
+                SetHP(shouldHaveHp);
             }
+        }
+
+        private void SetHP(int newHP)
+        {
+            parent.HitPoints = newHP;
         }
     }
 }

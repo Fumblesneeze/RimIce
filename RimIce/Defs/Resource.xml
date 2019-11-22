@@ -63,8 +63,13 @@
       <tickerType>Rare</tickerType>		
     <comps>
       <li>
-        <compClass>CompMelter</compClass>
-      </li>	  
+        <compClass>Ice.CompStackMelter</compClass>
+      </li>
+      <li Class="CompProperties_HeatPusher">
+        <compClass>CompHeatPusher</compClass>
+        <heatPerSecond>-1</heatPerSecond>
+        <heatPushMinTemperature>1</heatPushMinTemperature>	
+      </li>
     </comps>	
   </ThingDef>
 </Defs>

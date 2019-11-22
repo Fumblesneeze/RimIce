@@ -31,6 +31,7 @@
     </building>
   
     <comps>
+      <li Class="CompProperties_Forbiddable"/>
       <li Class="Ice.CompProperties_HitpointRefuelable">  
         <fuelConsumptionRate>1.25</fuelConsumptionRate>
         <destroyOnNoFuel>true</destroyOnNoFuel>

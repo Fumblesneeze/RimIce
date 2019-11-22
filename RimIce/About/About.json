@@ -1,26 +1,27 @@
 {
   "id": "Ice",
   "name": "Ice",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "supportedVersions": [
     "1.0.0"
   ],
   "authors": "Fumblesneeze",
-  "description": "Adds Ice to Rimworld.\r\n\r\n* Build ice walls and sculptures\r\n* Ice blocks can be dug from ice terrain\r\n* Some traders have ice blocks, depending on the temperature\r\n* Ice buildings deteriorate in temperatures above freezing\r\n* Lakes freeze in winter and during cold snaps\r\n* Ice walls cooling rooms\r\n* Ice stuff will only get repaired when under 90% health unless directly commanded\r\n\r\nNeeds HugsLib to be loaded before. Uses Harmony.\r\n\r\nPreview image made by [Queendubstep](http://steamcommunity.com/profiles/76561198284547921/)\r\n",
+  "description": "Adds Ice to Rimworld.\r\n\r\n* Build ice walls and sculptures\r\n* Ice blocks, walls and sculptures will cool the area but deteriorate\r\n* Repair ice things with more ice blocks\r\n* Ice blocks can be dug from ice terrain or bought from traders, price will vary depending on the temperature\r\n* Lakes and marshes freeze in winter and during cold snaps\r\n* You can build on the frozen lakes, but beware, things might get destroyed when they thaw\r\n\r\nNeeds HugsLib to be loaded before. Uses Harmony.\r\n\r\nPreview image made by [Queendubstep](http://steamcommunity.com/profiles/76561198284547921/)\r\n",
   "shortDescription": "Make ice walls and sculptures, let lakes freeze in winter",
   "preview": "https://raw.githubusercontent.com/Fumblesneeze/RimIce/master/Mod/About/previewIce.png",
   "homePage": "https://github.com/Fumblesneeze/RimIce",
   "issues": "https://github.com/Fumblesneeze/RimIce/issues",
   "category": "Content",
   "source": {
-    "github": "https://github.com/Fumblesneeze/RimIce/releases/download/v0.1.7/Ice.zip",
+    "github": "https://github.com/Fumblesneeze/RimIce/releases/download/v0.1.8/Ice.zip",
     "steam": "1556240626"
   },
   "relationships": {
+    "requires": "HugsLib",
     "after": "HugsLib"
   },
   "languages": "English",
   "support": "https://www.patreon.com/schweigert",
-  "created": "2019-11-06T15:12:26.3626365+01:00",
-  "changeLog": "combining the two wall types"
+  "created": "2019-11-22T21:31:37.4933047+01:00",
+  "changeLog": "added frozen marshes"
 }

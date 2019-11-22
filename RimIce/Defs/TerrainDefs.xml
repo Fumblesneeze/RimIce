@@ -5,5 +5,29 @@
     <label>shallow ice</label>
     <changeable>false</changeable>
   </TerrainDef>
+
+  <TerrainDef>
+    <defName>FrozenMarsh</defName>
+    <label>frozen marsh</label>
+    <texturePath>Terrain/Surfaces/FrozenMarsh</texturePath>
+    <edgeType>FadeRough</edgeType>
+    <renderPrecedence>338</renderPrecedence>
+    <pathCost>13</pathCost>
+    <statBases>
+      <Beauty>-1</Beauty>
+      <Cleanliness>-1</Cleanliness>
+    </statBases>
+    <scatterType>Rocky</scatterType>
+    <affordances>
+      <li>Light</li>
+      <li>Diggable</li>
+      <li>Bridgeable</li>
+    </affordances>
+    <generatedFilth>Filth_Dirt</generatedFilth>
+    <fertility>0.0</fertility>
+    <takeFootprints>True</takeFootprints>
+    <driesTo>Soil</driesTo>
+    <extinguishesFire>true</extinguishesFire>
+  </TerrainDef>
   
 </Defs>

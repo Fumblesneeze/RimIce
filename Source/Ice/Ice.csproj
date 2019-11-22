@@ -33,7 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="%24HugsLibChecker">
+    <Reference Include="%24HugsLibChecker, Version=0.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>Source-DLLs\$HugsLibChecker.dll</HintPath>
     </Reference>
     <Reference Include="0Harmony">
@@ -60,6 +61,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompHitpointRefuelable.cs" />
+    <Compile Include="CompStackMelter.cs" />
+    <Compile Include="DebugButtonsPatch.cs" />
     <Compile Include="Defs.cs" />
     <Compile Include="IceMapComponent.cs" />
     <Compile Include="IceMod.cs" />
@@ -67,7 +70,6 @@
     <Compile Include="CompProperties_HitpointRefuelable.cs" />
     <Compile Include="Patches\CheckAndPatch.cs" />
     <Compile Include="Patches\DynamicPrice.cs" />
-    <Compile Include="Patches\RepairIceWallsThreshold.cs" />
     <Compile Include="Patches\PatchHasComp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Designator_DigIce.cs" />
