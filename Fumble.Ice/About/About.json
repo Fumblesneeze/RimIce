@@ -1,0 +1,32 @@
+{
+  "packageId": "Fumble.Ice",
+  "name": "[1.1] Ice",
+  "version": "0.1.10",
+  "supportedVersions": [
+    "1.1.2579-rev1085"
+  ],
+  "authors": "Fumblesneeze",
+  "description": "Adds Ice to Rimworld.\r\n\r\n* Build ice walls and sculptures\r\n* Ice blocks, walls and sculptures will cool the area but deteriorate\r\n* Repair ice things with more ice blocks\r\n* Ice blocks can be dug from ice terrain or bought from traders, price will vary depending on the temperature\r\n* Lakes and marshes freeze in winter and during cold snaps\r\n* You can build on the frozen lakes, but beware, things might get destroyed when they thaw\r\n\r\nNeeds HugsLib to be loaded before. Uses Harmony.\r\n\r\nPreview image made by [Queendubstep](http://steamcommunity.com/profiles/76561198284547921/)",
+  "shortDescription": "Make ice walls and sculptures, let lakes freeze in winter",
+  "preview": "https://raw.githubusercontent.com/Fumblesneeze/RimIce/master/Mod/About/previewIce.png",
+  "homePage": "https://github.com/Fumblesneeze/RimIce",
+  "issues": "https://github.com/Fumblesneeze/RimIce/issues",
+  "category": "Content",
+  "source": {
+    "steam": "1556240626",
+    "github": "https://github.com/Fumblesneeze/RimIce/releases/download/v0.1.10/Fumble.Ice.zip"
+  },
+  "relationships": {
+    "requires": [
+      "brrainz.harmony",
+      "UnlimitedHugs.HugsLib"
+    ],
+    "after": [
+      "brrainz.harmony",
+      "UnlimitedHugs.HugsLib"
+    ]
+  },
+  "support": "",
+  "created": "2020-03-27T12:22:07.1909551+01:00",
+  "changeLog": "Update to 1.1"
+}

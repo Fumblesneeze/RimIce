@@ -17,7 +17,7 @@ namespace Ice
             return thingDef == Things.Resource_IceBlocks;
         }
 
-        public override IEnumerable<Thing> GenerateThings(int mapTileIndex)
+        public override IEnumerable<Thing> GenerateThings(int mapTileIndex, Faction faction)
         {
             var tileTemp = Current.Game.World.tileTemperatures.GetOutdoorTemp(mapTileIndex);
 

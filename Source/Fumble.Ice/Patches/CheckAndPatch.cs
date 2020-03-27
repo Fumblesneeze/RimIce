@@ -1,4 +1,4 @@
-﻿using Harmony;
+﻿using HarmonyLib;
 using System.Reflection;
 
 namespace Ice.Patches
@@ -7,8 +7,8 @@ namespace Ice.Patches
     {
         public static void PatchMethods()
         {
-            var harmony = HarmonyInstance.Create("Fumblesneeze.Ice");
-            harmony.PatchAll(Assembly.GetExecutingAssembly());
+            var harmony = new Harmony("Fumble.Ice");
+            harmony.PatchAll();
         }
     }
 }

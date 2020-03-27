@@ -23,10 +23,8 @@
       <li>Diggable</li>
       <li>Bridgeable</li>
     </affordances>
-    <generatedFilth>Filth_Dirt</generatedFilth>
     <fertility>0.0</fertility>
     <takeFootprints>True</takeFootprints>
-    <driesTo>Soil</driesTo>
     <extinguishesFire>true</extinguishesFire>
   </TerrainDef>
   

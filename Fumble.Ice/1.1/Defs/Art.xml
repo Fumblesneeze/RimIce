@@ -22,7 +22,6 @@
       <li>BuildingsArt</li>
     </thingCategories>
 		
-    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
     <drawerType>MapMeshAndRealTime</drawerType>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
     <repairEffect>Repair</repairEffect>
@@ -52,7 +51,7 @@
 
     <inspectorTabs><li>ITab_Art</li></inspectorTabs>
     <recipeMaker>
-      <workSpeedStat>SculptingSpeed</workSpeedStat>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
       <workSkill>Artistic</workSkill>
       <unfinishedThingDef>UnfinishedSculpture</unfinishedThingDef>
       <effectWorking>Sculpt</effectWorking>

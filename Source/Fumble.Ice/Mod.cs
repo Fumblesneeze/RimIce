@@ -1,4 +1,4 @@
-﻿using Harmony;
+using HarmonyLib;
 using HugsLib;
 using RimWorld;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ namespace Ice
     {
         private IceMapComponent iceComponent;
 
-        public override string ModIdentifier { get; } = "RimIce";
+        public override string ModIdentifier { get; } = "Fumble.Ice";
 
         public override void Initialize()
         {

@@ -7,7 +7,7 @@
     <useHitPoints>true</useHitPoints>
     <selectable>true</selectable>
     <altitudeLayer>Item</altitudeLayer>
-    <stackLimit>75</stackLimit>
+    <stackLimit>15</stackLimit>
     <comps>
       <li Class="CompProperties_Forbiddable"/>
     </comps>
@@ -47,7 +47,6 @@
       <color>(180,210,230)</color>
       <commonality>0.01</commonality>
       <constructEffect>ConstructMetal</constructEffect>
-      <soundImpactStuff>BulletImpactMetal</soundImpactStuff>
       <soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
       <soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
       <statOffsets>
