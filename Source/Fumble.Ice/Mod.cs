@@ -3,36 +3,25 @@ using HugsLib;
 using RimWorld;
 using System.Collections.Generic;
 using Verse;
-using static Ice.Patches.CheckAndPatch;
 
 namespace Ice
 {
     public class IceMod : ModBase
     {
-        private IceMapComponent iceComponent;
-
         public override string ModIdentifier { get; } = "Fumble.Ice";
 
         public override void Initialize()
         {
         }
-
-        public override void DefsLoaded()
-        {
-            PatchMethods();
-        }
+        private bool added = false;
 
         public override void MapLoaded(Map map)
         {
-            AddDesignators();
-            AddMapComponents(map);
-        }
-
-        private void AddMapComponents(Map map)
-        {
-            iceComponent = HugsLib.Utils.MapComponentUtility.GetMapComponent<IceMapComponent>(map);
-            if (iceComponent == null)
-                iceComponent = new IceMapComponent(map);
+            if (!added)
+            {
+                AddDesignators();
+                added = true;
+            }
         }
 
         private void AddDesignators()

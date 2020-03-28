@@ -25,6 +25,7 @@
 
     <tickerType>Normal</tickerType>
     <costStuffCount>0</costStuffCount>
+    <useStuffTerrainAffordance>false</useStuffTerrainAffordance>
     <stuffCategories Inherit="false"/>
     <building>
       <repairable>false</repairable>
