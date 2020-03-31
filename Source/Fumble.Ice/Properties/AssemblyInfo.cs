@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die mit einer Assembly verknüpft sind.
 [assembly: AssemblyTitle("[1.1] Ice")]
-[assembly: AssemblyDescription("Adds Ice to Rimworld.\r\n\r\n* Build ice walls and sculptures\r\n* Ice blocks, walls and sculptures will cool the area but deteriorate\r\n* Repair ice things with more ice blocks\r\n* Ice blocks can be dug from ice terrain or bought from traders, price will vary depending on the temperature\r\n* Lakes and marshes freeze in winter and during cold snaps\r\n* You can build on the frozen lakes, but beware, things might get destroyed when they thaw\r\n\r\nNeeds HugsLib to be loaded before. Uses Harmony.\r\n\r\nPreview image made by [Queendubstep](http://steamcommunity.com/profiles/76561198284547921/)")]
+[assembly: AssemblyDescription("Adds Ice to Rimworld.\r\n\r\n* Build ice walls and sculptures\r\n* Ice blocks, walls and sculptures will cool the area but deteriorate\r\n* Repair ice things with more ice blocks\r\n* Ice blocks can be dug from ice terrain or bought from traders, price will vary depending on the temperature\r\n* Lakes and marshes freeze in winter and during cold snaps\r\n* You can build on the frozen lakes, but beware, things might get destroyed when they thaw\r\n* Carrying ice blocks will keep your other carried things nice and fresh.\r\n\r\nNeeds HugsLib to be loaded before. Uses Harmony.\r\n\r\nPreview image made by [Queendubstep](http://steamcommunity.com/profiles/76561198284547921/)")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("[1.1] Ice")]
@@ -31,6 +31,6 @@ using System.Runtime.InteropServices;
 //
 // Sie können alle Werte angeben oder die standardmäßigen Build- und Revisionsnummern 
 // übernehmen, indem Sie "*" eingeben:
-// [assembly: AssemblyVersion("0.1.10.0")]
-[assembly: AssemblyVersion("0.1.10.0")]
-[assembly: AssemblyFileVersion("0.1.10.0")]
+// [assembly: AssemblyVersion("0.1.11.0")]
+[assembly: AssemblyVersion("0.1.11.0")]
+[assembly: AssemblyFileVersion("0.1.11.0")]

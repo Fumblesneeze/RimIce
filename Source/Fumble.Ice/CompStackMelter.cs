@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
 using Verse;
 
 namespace Ice
@@ -29,7 +30,7 @@ namespace Ice
                 if(parent.HitPoints - damage <= 0.1f && parent.stackCount > 1)
                 {
                     parent.stackCount--;
-                    parent.HitPoints = parent.MaxHitPoints / 2;
+                    parent.HitPoints = parent.MaxHitPoints;
                 }
                 else
                 {
@@ -37,7 +38,13 @@ namespace Ice
                 }
             }
         }
-        
+
+        public override void PreAbsorbStack(Thing otherStack, int count)
+        {
+            float t = (float)count / (parent.stackCount + count);
+            parent.HitPoints = (int)Mathf.Lerp(parent.HitPoints, otherStack.HitPoints, t);
+        }
+
         private const float MeltPerIntervalPer10Degrees = 0.30f;
     }
 }

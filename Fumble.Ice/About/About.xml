@@ -33,6 +33,7 @@
 * Ice blocks can be dug from ice terrain or bought from traders, price will vary depending on the temperature
 * Lakes and marshes freeze in winter and during cold snaps
 * You can build on the frozen lakes, but beware, things might get destroyed when they thaw
+* Carrying ice blocks will keep your other carried things nice and fresh.
 
 Needs HugsLib to be loaded before. Uses Harmony.
 
